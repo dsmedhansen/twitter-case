@@ -82,7 +82,7 @@ print(tweets['link'])
 # Quote paper on twitter and pol. polarization and bring attention to the 10.000 trolls
 
 
-
+"Twitter, yolo!!"
 
 
 
