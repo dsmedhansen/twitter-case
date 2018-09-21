@@ -5,12 +5,10 @@ Created on Thu Sep 20 15:16:32 2018
 
 @author: Daniel
 """
-
-#%%
-
 import json
 import os
 import pandas as pd
+import re
 
 PATH = '/Users/Daniel/Google Drive/Master/Fundamentals of data science/'
 os.chdir(PATH)
@@ -20,7 +18,6 @@ tweets_collection = "geotagged_tweets.jsons"
 tweets_data = []
 tweets_file = open(tweets_collection, "r")
 
-#%%
 i = 0
 
 for line in tweets_file:
@@ -41,15 +38,10 @@ for line in tweets_file:
         print (e)
         continue
 
-#%%
-
 for i in range(len(tweets_data)):
     print(tweets_data[i]['lang'])
 
-#%%
 list(map(lambda tweet: tweet['text'], tweets_data))
-
-#%%
 
 tweets = pd.DataFrame()
 
@@ -60,9 +52,7 @@ tweets['location'] = list(map(lambda tweet: tweet['place']['bounding_box'] if tw
 
 # See this website for more info on the metadata: https://developer.twitter.com/en/docs/tweets/data-dictionary/overview/geo-objects.html
 
-#%%
 
-import re
 
 # A function that extracts the hyperlinks from the tweet's content.
 def extract_link(text):
@@ -80,7 +70,6 @@ def word_in_text(word, text):
     if match:
         return True
     return False
-
 
 tweets['link'] = tweets['text'].apply(lambda tweet: extract_link(tweet))
 print(tweets['link'])
