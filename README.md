@@ -7,7 +7,6 @@ For the ones new to Github (like me) this short video was pretty helpful in expl
 Own ideas:
 - After the elections Twitter has removed around 10.000 trolling accounts, maybe if we can find the dataset with the troll-accounts if would be nice to filter them out and compare results in terms of sentiment and retweets..
 - Correlate sentiment with electoral results
-- Maybe use multi-level framework to see if nesting matters: are red voters in blues states more radical than red voters in red states?
 - Maybe read this paper for inspiration: "Bots and Automation over Twitter during the First U.S. Presidential Debate"
 
 RQ's to think about (mail from Andrew): 
