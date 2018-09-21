@@ -7,6 +7,8 @@ For the ones new to Github (like me) this short video was pretty helpful in expl
 Own ideas:
 - After the elections Twitter has removed around 10.000 trolling accounts, maybe if we can find the dataset with the troll-accounts if would be nice to filter them out and compare results in terms of sentiment and retweets..
 - Correlate sentiment with electoral results
+- Topic modelling and break down per state or over time
+  - Time-series model of topics over time in a subset of states
 - Maybe read this paper for inspiration: "Bots and Automation over Twitter during the First U.S. Presidential Debate"
 
 RQ's to think about (mail from Andrew): 
