@@ -10,7 +10,7 @@ import os
 import pandas as pd
 import re
 
-PATH = '/Users/Daniel/Google Drive/Master/Fundamentals of data science/'
+PATH = 'insert own path'
 os.chdir(PATH)
 print("Working directory: %s" % os.getcwd() )
 
