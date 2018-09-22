@@ -32,7 +32,7 @@ for line in tweets_file:
             print ('\nWe have gathered:',len(tweets_data), 'tweets.\n')
             print('This is one of them:', tweet['text'])
         if i >= 1000: # Define size of subset
-            del i, line, tweet
+            del i, line, tweet, tweets_collection
             break
     except Exception as e:
         print (e)
