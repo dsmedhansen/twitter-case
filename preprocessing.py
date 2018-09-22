@@ -100,7 +100,7 @@ def twitter_handle(tweet):
 
 tweets['handles'] = tweets['text'].apply(lambda tweet: twitter_handle(tweet)) # Move handles to column
 
-def remove_handle(text): # Remove links from text as first step in cleaning of data
+def remove_handle(text): # Remove handles from text
     for link in text:
         result = re.sub(r'@[a-zA-Z_0-9]{4,}', '', text)
         print ("\n\nHandle free:\n", result)
