@@ -40,8 +40,8 @@ for line in tweets_file:
         print (e)
         continue
 
-for i in range(len(tweets_data)):
-    print(tweets_data[i]['lang'])
+#for i in range(len(tweets_data)):
+    #print(tweets_data[i]['lang'])
 
 list(map(lambda tweet: tweet['text'], tweets_data))
 
@@ -88,15 +88,27 @@ def remove_link(text): # Remove links from text as first step in cleaning of dat
     
 tweets['text'] = tweets['text'].apply(lambda tweet: remove_link(tweet)) # Remove links from text
 
-#df['blob_sentiment'] = df['full_text'].apply(lambda text: TextBlob(text).sentiment.polarity)
-
 #%%
 # Move all mentions to a separate column (see notes from Big Data on how to match a twitter handle)
 
+def twitter_handle(tweet):
+    handle = r'@[a-zA-Z_0-9]{4,}'
+    match = re.findall(handle, tweet)
+    if match:
+        return match
+    return '' 
 
+tweets['handles'] = tweets['text'].apply(lambda tweet: twitter_handle(tweet)) # Move handles to column
 
+def remove_handle(text): # Remove links from text as first step in cleaning of data
+    for link in text:
+        result = re.sub(r'@[a-zA-Z_0-9]{4,}', '', text)
+        print ("\n\nHandle free:\n", result)
+        return result
+    
+tweets['text'] = tweets['text'].apply(lambda tweet: remove_handle(tweet)) # Remove all twitter-handles from text 
 
-
+#%% A bit more cleaning and we'll be ready for the sentiment analysis
 
 
 
