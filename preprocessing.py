@@ -10,7 +10,9 @@ import os
 import pandas as pd
 import re
 
-PATH = 'insert own path'
+#%%
+
+PATH = '/Users/Daniel/Google Drive/Master/Fundamentals of data science/'
 os.chdir(PATH)
 print("Working directory: %s" % os.getcwd() )
 
@@ -26,10 +28,10 @@ for line in tweets_file:
         tweet = json.loads(line)
         tweets_data.append(tweet)
         i += 1
-        if i % 500 == 0:      
+        if i % 100 == 0:      
             print ('\nWe have gathered:',len(tweets_data), 'tweets.\n')
             print('This is one of them:', tweet['text'])
-        if i >= 20000: # Define size of subset
+        if i >= 5000: # Define size of subset
             del i
             del line
             del tweet
@@ -52,7 +54,7 @@ tweets['location'] = list(map(lambda tweet: tweet['place']['bounding_box'] if tw
 
 # See this website for more info on the metadata: https://developer.twitter.com/en/docs/tweets/data-dictionary/overview/geo-objects.html
 
-
+#%%
 
 # A function that extracts the hyperlinks from the tweet's content.
 def extract_link(text):
