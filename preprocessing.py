@@ -31,7 +31,7 @@ for line in tweets_file:
         if i % 100 == 0:      
             print ('\nWe have gathered:',len(tweets_data), 'tweets.\n')
             print('This is one of them:', tweet['text'])
-        if i >= 5000: # Define size of subset
+        if i >= 1000: # Define size of subset
             del i
             del line
             del tweet
@@ -73,19 +73,32 @@ def word_in_text(word, text):
         return True
     return False
 
+#%%
+
 tweets['link'] = tweets['text'].apply(lambda tweet: extract_link(tweet))
 print(tweets['link'])
 
+#%%
 
-# Quote someone and see if electoral result is correlated with sentiment
-    # Maybe use a second source for confirmation... 
-    # Sentiment key-word correlated with voting
-    # 
-# Quote paper on twitter and pol. polarization and bring attention to the 10.000 trolls
+def remove_link(text): # Remove links from text as first step in cleaning of data
+    for link in text:
+        result = re.sub(r"http\S+", "", text)
+        print ("\n\nLink free:\n",result)
+        return result
+    
+tweets['text'] = tweets['text'].apply(lambda tweet: remove_link(tweet)) # Remove links from text
+
+#df['blob_sentiment'] = df['full_text'].apply(lambda text: TextBlob(text).sentiment.polarity)
+
+#%%
+# Move all mentions to a separate column (see notes from Big Data on how to match a twitter handle)
 
 
-"Twitter, yolo!!"
-"Test, test"
+
+
+
+
+
 
 
 
