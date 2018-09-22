@@ -87,10 +87,10 @@ def remove_link(text): # Remove links from text as first step in cleaning of dat
 tweets['text'] = tweets['text'].apply(lambda tweet: remove_link(tweet)) # Remove links from text
 
 #%%
-# Move all mentions to a separate column (see notes from Big Data on how to match a twitter handle)
+# Move all mentions to a separate column
 
 def twitter_handle(tweet):
-    handle = r'@[a-zA-Z_0-9]{4,}'
+    handle = r'@[a-zA-Z_0-9]{4,}' # Regex for Twitter handle
     match = re.findall(handle, tweet)
     if match:
         return match
@@ -108,6 +108,7 @@ tweets['text'] = tweets['text'].apply(lambda tweet: remove_handle(tweet)) # Remo
 
 #%% A bit more cleaning and we'll be ready for the sentiment analysis
 
+# Remove special characters and numbers.... 
 
 
 
