@@ -110,8 +110,40 @@ tweets['text'] = tweets['text'].apply(lambda tweet: remove_handle(tweet)) # Remo
 
 # Remove special characters and numbers.... 
 
+from nltk.corpus import stopwords
+from nltk.stem.wordnet import WordNetLemmatizer
+import string
+
+stop = set(stopwords.words('english'))
+
+# Create a set of punctuation words 
+exclude = set(string.punctuation) 
+
+# This is the function makeing the lemmatization
+lemma = WordNetLemmatizer()
+
+# In this function we perform the entire cleaning
+def clean(doc):
+    stop_free = " ".join([i for i in doc.lower().split() if i not in stop])
+    punc_free = ''.join(ch for ch in stop_free if ch not in exclude)
+    normalized = " ".join(lemma.lemmatize(word) for word in punc_free.split())
+    #normalized = ' '.join(normalized)
+    return normalized
 
 
+#%%
+# This is the clean corpus.
+tweets['text_clean'] = [clean(doc).split() for doc in tweets['text']] # Check df: ISIS is lemmatized to isi which might be problem
 
+# change "isi" to isis (this doesnt matter for the sentiment analysis but it will for the topic modelling)
 
+#%%
+
+from textblob import TextBlob # Textblob for sentiment analysis
+
+tweets['blob_sentiment'] = tweets['text_clean'].apply(lambda tweet: ' '.join(tweet))
+tweets['blob_sentiment'] = tweets['blob_sentiment'].apply(lambda text: TextBlob(text).sentiment.polarity)
+
+# Run two different sentiment analysis and correlate the outcomes..
+# Find model that includes emojis
 
