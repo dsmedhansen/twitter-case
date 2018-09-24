@@ -163,7 +163,8 @@ senti= vader.SentimentIntensityAnalyzer()
 
 tweets['vader_sentiment'] = tweets['text_clean'].apply(lambda tweet: senti.polarity_scores(tweet)['compound'])
 
-# Impliment SentiStrength (better for short texts)
+# Impliment SentiStrength (better for short texts) 
+# Website: http://sentistrength.wlv.ac.uk/
 
 #%%
 
