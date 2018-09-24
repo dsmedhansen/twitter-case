@@ -141,9 +141,61 @@ tweets['text_clean'] = [clean(doc).split() for doc in tweets['text']] # Check df
 
 from textblob import TextBlob # Textblob for sentiment analysis
 
-tweets['blob_sentiment'] = tweets['text_clean'].apply(lambda tweet: ' '.join(tweet))
-tweets['blob_sentiment'] = tweets['blob_sentiment'].apply(lambda text: TextBlob(text).sentiment.polarity)
+tweets['text_clean'] = tweets['text_clean'].apply(lambda tweet: ' '.join(tweet))
+tweets['blob_sentiment'] = tweets['text_clean'].apply(lambda text: TextBlob(text).sentiment.polarity)
 
 # Run two different sentiment analysis and correlate the outcomes..
 # Find model that includes emojis
+
+#%%
+from nltk.sentiment import vader
+import seaborn as sns
+
+
+senti= vader.SentimentIntensityAnalyzer()
+
+tweets['vader_sentiment'] = tweets['text_clean'].apply(lambda tweet: senti.polarity_scores(tweet)['compound'])
+
+
+#%%
+
+corrmatrix = tweets[['blob_sentiment', 'vader_sentiment']].corr()
+corrmatrix
+
+sns.heatmap(corrmatrix) # Correlations below 0.6... 
+
+#%%
+
+from statsmodels.stats.weightstats import ttest_ind
+
+blob = []   
+vader = []
+    
+for score in tweets['blob_sentiment']:
+    blob.append(score)
+    
+for score in tweets['vader_sentiment']:
+    vader.append(score)
+    
+
+results_sentiments = ttest_ind(blob, vader)
+
+
+print('t({2:.0f}) = {0:.3f}, p = {1:.3F}'.format(*results_sentiments))
+
+
+# Use model trained on bigger corpus or stick with vader/blob?
+
+#%%
+
+# Now we do the topic model and pickle the model
+# First determine the optimal amount of topics for the WHOLE corpus (no subset)
+
+ß
+
+
+
+
+
+
 
