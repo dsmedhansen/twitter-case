@@ -31,7 +31,7 @@ for line in tweets_file:
         if i % 100 == 0:      
             print ('\nWe have gathered:',len(tweets_data), 'tweets.\n')
             print('This is one of them:', tweet['text'])
-        if i >= 1000: # Define size of subset
+        if i >= 10000: # Define size of subset
             del i, line, tweet, tweets_collection
             break
     except Exception as e:
@@ -45,11 +45,15 @@ list(map(lambda tweet: tweet['text'], tweets_data))
 
 tweets = pd.DataFrame()
 
+#%%
+
 tweets['text'] =    list(map(lambda tweet: tweet['text'], tweets_data))
 tweets['lang'] =    list(map(lambda tweet: tweet['lang'], tweets_data))
 tweets['country'] = list(map(lambda tweet: tweet['place']['country'] if tweet['place'] != None else None, tweets_data))
-tweets['location'] = list(map(lambda tweet: tweet['place']['bounding_box'] if tweet['place']['bounding_box'] != None else None, tweets_data))
 
+#%%
+tweets['location'] = list(map(lambda tweet: tweet['place']['bounding_box'] if tweet['place']['bounding_box'] != None else None, tweets_data))
+    # This is not working if I use the whole dataset...? 
 # See this website for more info on the metadata: https://developer.twitter.com/en/docs/tweets/data-dictionary/overview/geo-objects.html
 
 #%%
@@ -63,7 +67,7 @@ def extract_link(text):
     return ''
 
 # A function that checks whether a word is included in the tweet's content
-def word_in_text(word, text):
+def word_in_text(word, text): # Redundant?
     word = word.lower()
     text = text.lower()
     match = re.search(word, text)
@@ -98,6 +102,8 @@ def twitter_handle(tweet):
 
 tweets['handles'] = tweets['text'].apply(lambda tweet: twitter_handle(tweet)) # Move handles to column
 
+#%%
+
 def remove_handle(text): # Remove handles from text
     for link in text:
         result = re.sub(r'@[a-zA-Z_0-9]{4,}', '', text)
@@ -127,12 +133,14 @@ def clean(doc):
     stop_free = " ".join([i for i in doc.lower().split() if i not in stop])
     punc_free = ''.join(ch for ch in stop_free if ch not in exclude)
     normalized = " ".join(lemma.lemmatize(word) for word in punc_free.split())
-    #normalized = ' '.join(normalized)
     return normalized
-
 
 #%%
 # This is the clean corpus.
+    # This part is not working anymore: 'NoneType' object has no attribute 'lower'
+    # I think the problem occurs when I remove twitter handles and hyperlinks
+    # because this means that some cells are NA's, which returns an empty object
+
 tweets['text_clean'] = [clean(doc).split() for doc in tweets['text']] # Check df: ISIS is lemmatized to isi which might be problem
 
 # change "isi" to isis (this doesnt matter for the sentiment analysis but it will for the topic modelling)
@@ -154,6 +162,8 @@ import seaborn as sns
 senti= vader.SentimentIntensityAnalyzer()
 
 tweets['vader_sentiment'] = tweets['text_clean'].apply(lambda tweet: senti.polarity_scores(tweet)['compound'])
+
+# Impliment SentiStrength (better for short texts)
 
 #%%
 
@@ -181,16 +191,35 @@ results_sentiments = ttest_ind(blob, vader)
 print('t({2:.0f}) = {0:.3f}, p = {1:.3F}'.format(*results_sentiments))
 
 # Use model trained on bigger corpus or stick with vader/blob?
+# Do we need to train a better model for sentiment analysis or should we stick with Vader/Blob?
+
+#%%
+import gensim
+from gensim import corpora
+
+doc_clean = tweets['text_clean'].tolist()
 
 #%%
 
-# Now we do the topic model and pickle the model
-# First determine the optimal amount of topics for the WHOLE corpus (no subset)
-# Implement topic model on whole corpus
+# Delete DF to free up memory before running LDA
 
+#%%
 
+dictionary = corpora.Dictionary(doc_clean)
+doc_term_matrix = [dictionary.doc2bow(doc) for doc in doc_clean]
+# Creating the object for LDA model using gensim library
+Lda = gensim.models.ldamodel.LdaModel
 
+# Running and Trainign LDA model on the document term matrix.
+ldamodel = Lda(doc_term_matrix, num_topics=10, id2word = dictionary, passes=100)
 
+# Print 2 topics and describe then with 4 words.
+topics = ldamodel.print_topics(num_topics=10, num_words=10)
 
-
-
+i=0
+for topic in topics:
+    print ("Topic",i ,"->", topic)     
+    i+=1
+    
+# Maybe we should just remove the handles since all topics now contain 
+# words such as @realdonaltrump
