@@ -151,11 +151,9 @@ tweets['blob_sentiment'] = tweets['text_clean'].apply(lambda text: TextBlob(text
 from nltk.sentiment import vader
 import seaborn as sns
 
-
 senti= vader.SentimentIntensityAnalyzer()
 
 tweets['vader_sentiment'] = tweets['text_clean'].apply(lambda tweet: senti.polarity_scores(tweet)['compound'])
-
 
 #%%
 
@@ -176,13 +174,11 @@ for score in tweets['blob_sentiment']:
     
 for score in tweets['vader_sentiment']:
     vader.append(score)
-    
 
 results_sentiments = ttest_ind(blob, vader)
 
 
 print('t({2:.0f}) = {0:.3f}, p = {1:.3F}'.format(*results_sentiments))
-
 
 # Use model trained on bigger corpus or stick with vader/blob?
 
