@@ -186,8 +186,7 @@ print('t({2:.0f}) = {0:.3f}, p = {1:.3F}'.format(*results_sentiments))
 
 # Now we do the topic model and pickle the model
 # First determine the optimal amount of topics for the WHOLE corpus (no subset)
-
-ß
+# Implement topic model on whole corpus
 
 
 
