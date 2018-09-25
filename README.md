@@ -7,6 +7,7 @@ The overall goal of this assignment will be to show differences in a selected gr
 - To do:
   - Do basic intro visualization of data (see notebook intro) (Daniel)
   - Map locations to country and districts in the US (Slavo)
+    - Add state location of tweeter to pd dataframe
   - Calculate sentiment with SentiStrenght (Martijn)
   - Show sentiment (output: map)
      - For the world
