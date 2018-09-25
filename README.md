@@ -21,6 +21,9 @@ The overall goal of this assignment will be to show differences in a selected gr
     - Battleground states
     - Electoral outcome per state
     - Electoral outcome per district
+  - Make subset of tweets per battleground state (Daniel)
+    - Run topic model per subset and compare
+
 
 For the ones new to Github (like me) this short video was pretty helpful in explaining how it works: https://www.youtube.com/watch?v=0fKg7e37bQE
 
