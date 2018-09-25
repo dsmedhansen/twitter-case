@@ -5,7 +5,7 @@ This is the github repo for our first case study.
 The overall goal of this assignment will be to show differences in a selected group of battleground states and districts within those states
 
 - To do:
-  - Do basic intro visualization of data (see notebook intro)
+  - Do basic intro visualization of data (see notebook intro) (Daniel)
   - Map locations to country and districts in the US (Slavo)
   - Calculate sentiment with SentiStrenght (Martijn)
   - Add country-variable to dataset (Daniel)
