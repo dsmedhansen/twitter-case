@@ -27,7 +27,7 @@ for line in tweets_file:
     try:
         tweet = json.loads(line)
         tweets_data.append(tweet)
-        i += 1
+        i += 1  
         if i % 100 == 0:      
             print ('\nWe have gathered:',len(tweets_data), 'tweets.\n')
             print('This is one of them:', tweet['text'])
@@ -187,7 +187,6 @@ for score in tweets['vader_sentiment']:
     vader.append(score)
 
 results_sentiments = ttest_ind(blob, vader)
-
 
 print('t({2:.0f}) = {0:.3f}, p = {1:.3F}'.format(*results_sentiments))
 
