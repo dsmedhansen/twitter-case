@@ -5,10 +5,11 @@ This is the github repo for our first case study.
 The overall goal of this assignment will be to show differences in a selected group of battleground states and districts within those states
 
 - To do:
+  - Do basic visualization of data (see notebook intro)
+  - Map locations to country and districts in the US (Slavo)
   - Calculate sentiment with SentiStrenght (Martijn)
   - Add country-variable to dataset
   - Calculate sentiment per country (output: map)
-  - Translate coordinates to states (output: map)
      - Show sentiment per state (output should be a map)
      - Show sentiment per district in battleground states (outout: map)
   - Get demographic info and add to dataframe:
