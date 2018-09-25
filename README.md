@@ -8,7 +8,6 @@ The overall goal of this assignment will be to show differences in a selected gr
   - Do basic intro visualization of data (see notebook intro) (Daniel)
   - Map locations to country and districts in the US (Slavo)
   - Calculate sentiment with SentiStrenght (Martijn)
-  - Add country-variable to dataset (Daniel)
   - Show sentiment (output: map)
      - For the world
      - For the US-states
