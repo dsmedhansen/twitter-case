@@ -2,6 +2,21 @@
 
 This is the github repo for our first case study.
 
+The overall goal of this assignment will be to show differences in a selected group of battleground states and districts within those states
+
+- To do:
+  - Calculate sentiment with SentiStrenght (Martijn)
+  - Add country-variable to dataset
+  - Calculate sentiment per country (output: map)
+  - Translate coordinates to states (output: map)
+     - Show sentiment per state (output should be a map)
+     - Show sentiment per district in battleground states (outout: map)
+  - Get demographic info and add to dataframe:
+    - Race (if possible)
+    - Age
+    - Educational level
+  - 
+
 For the ones new to Github (like me) this short video was pretty helpful in explaining how it works: https://www.youtube.com/watch?v=0fKg7e37bQE
 
 Own ideas:
@@ -18,3 +33,5 @@ RQ's to think about (mail from Andrew):
   3. Did sentiment analyses help identify supporters of each candidate? How did sentiment correlate with other information like demographics? That is to say - where is each candidate popular, and who are they popular with?  Were you able to show this information clearly/visually? If you could not use sentiment analysis, why not?  
   4. Were you able to combine sentiment knowledge with a topic analysis?  That is, were you able to show what supporters who were positive/negative towards each candidate talked about? Could you show this clearly/visually? If you could not use topic analysis, why not? 
   5. Could you relate your results to the actual state-voting patterns in the election? What are you able to show, and how confident are you in your findings?
+
+
