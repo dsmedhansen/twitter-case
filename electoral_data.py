@@ -21,10 +21,9 @@ demographics = pd.read_csv("county_facts.csv")
 
 #%%
 
-votes = pd.DataFrame.groupby(['party' == 'Republican'], as_index = False)
+votes = primary.groupby(by="party")
 
-votes.info()
-votes.describe()
 
-list(votes) # Print object
+#%%
+
 
