@@ -52,5 +52,5 @@ tweets["zipcode"] = [search.by_coordinates(val1[1], val1[0], radius=r, returns=1
                      for val1 in tweets["location_centeroid"] for r in tweets["distance_from_centeroid"]]
 '''
 
-tweets["zipcode"] = [search.by_coordinates(val1[1], val1[0], radius=2, returns=1) 
+tweets["zipcode"] = [search.by_coordinates(val1[1], val1[0], radius=4, returns=1) 
                      for val1 in tweets["location_centeroid"]]
