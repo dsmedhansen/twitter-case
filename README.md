@@ -18,7 +18,6 @@ The overall goal of this assignment will be to show differences in a selected gr
         - Proportion lation per county (From Anson)
         - Educatinal level (proportion of people in county that have a bachelor or above) (From Anson)
         - Mean income level per county (From Anson)
-        - Median age per county (from Daniel)
         - Vote proportion for Republican (From Daniel)
         - Vote proportion for Democrat (From Daniel)
         - Gini-coefficient per county (From Daniel)
