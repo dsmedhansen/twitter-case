@@ -8,9 +8,9 @@ The overall goal of this assignment will be to show differences in a selected gr
   - Combine data into new dataframe (Martijn)
     - The following variables will be included
       - Index of tweet
-      - Sentiment of tweet with Vader
-      - Tweet handles in tweet (Trump or Hillary)
-      - Country of the tweeter
+      - Sentiment of tweet with Vader (Martijn)
+      - Tweet handles in tweet (Trump or Hillary) (Martijn)
+      - Country of the tweeter (Martijn)
        - State of tweeter (from Slavo)
         - County of tweeter (From Slavo)
         - Proportion black per county (From Anson)
