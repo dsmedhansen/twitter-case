@@ -9,18 +9,23 @@ The overall goal of this assignment will be to show differences in a selected gr
     - The following variables will be included
       - Index of tweet
       - Sentiment of tweet with Vader
-       - State of tweeter
-        - County of tweeter
-        - Proportion black per county
-        - Proportion white per county
-        - Proportion lation per county
-        - Educatinal level (proportion of people in county that have a bachelor or above)
-        - Mean income level per county
-        - Median age per county 
- 
+      - Tweet handles in tweet (Trump or Hillary)
+      - Country of the tweeter
+       - State of tweeter (from Slavo)
+        - County of tweeter (From Slavo)
+        - Proportion black per county (From Anson)
+        - Proportion white per county (From Anson)
+        - Proportion lation per county (From Anson)
+        - Educatinal level (proportion of people in county that have a bachelor or above) (From Anson)
+        - Mean income level per county (From Anson)
+        - Median age per county (from Daniel)
+        - Vote proportion for Republican (From Daniel)
+        - Vote proportion for Democrat (From Daniel)
+        - Mean sentiment Hillary per country, state, and county
+        - Mean sentiment Trump per country, state, and county
+        
   - Get report writing up-and-runnning (Daniel)
-  - Build two maps with mean sentiment: One with Trump's twitter handle as keyword and one with Hillary's twitterhandle as keyword
-  
+  - Build model to predict results of elections (regression)
 
 For the ones new to Github (like me) this short video was pretty helpful in explaining how it works: https://www.youtube.com/watch?v=0fKg7e37bQE
 
