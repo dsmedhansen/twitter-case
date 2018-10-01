@@ -21,8 +21,9 @@ The overall goal of this assignment will be to show differences in a selected gr
         - Median age per county (from Daniel)
         - Vote proportion for Republican (From Daniel)
         - Vote proportion for Democrat (From Daniel)
-        - Mean sentiment Hillary per country, state, and county
-        - Mean sentiment Trump per country, state, and county
+        - Gini-coefficient per county (From Daniel)
+        - Mean sentiment Hillary per country, state, and county (Martijn)
+        - Mean sentiment Trump per country, state, and county (Martijn)
         
   - Get report writing up-and-runnning (Daniel)
   - Build model to predict results of elections (regression)
