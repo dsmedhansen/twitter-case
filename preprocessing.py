@@ -28,18 +28,19 @@ for line in tweets_file:
         tweet = json.loads(line)
         tweets_data.append(tweet)
         i += 1  
-        if i % 100 == 0:      
+        if i % 10000 == 0:      
             print ('\nWe have gathered:',len(tweets_data), 'tweets.\n')
             print('This is one of them:', tweet['text'])
-        if i >= 10000: # Define size of subset
-            del i, line, tweet, tweets_collection
-            break
+        #if i >= 10000: # Define size of subset
+            #del i, line, tweet, tweets_collection
+            #break
     except Exception as e:
         print (e)
         continue
 
 #for i in range(len(tweets_data)):
     #print(tweets_data[i]['lang'])
+
 
 list(map(lambda tweet: tweet['text'], tweets_data))
 
@@ -48,8 +49,8 @@ tweets = pd.DataFrame()
 #%%
 
 tweets['text'] =    list(map(lambda tweet: tweet['text'], tweets_data))
-tweets['lang'] =    list(map(lambda tweet: tweet['lang'], tweets_data))
-tweets['country'] = list(map(lambda tweet: tweet['place']['country'] if tweet['place'] != None else None, tweets_data))
+#tweets['lang'] =    list(map(lambda tweet: tweet['lang'], tweets_data))
+#tweets['country'] = list(map(lambda tweet: tweet['place']['country'] if tweet['place'] != None else None, tweets_data))
 
 #%%
 tweets['location'] = list(map(lambda tweet: tweet['place']['bounding_box'] if tweet['place']['bounding_box'] != None else None, tweets_data))
@@ -85,7 +86,7 @@ print(tweets['link'])
 def remove_link(text): # Remove links from text as first step in cleaning of data
     for link in text:
         result = re.sub(r"http\S+", "", text)
-        print ("\n\nLink free:\n",result)
+        #print ("\n\nLink free:\n",result)
         return result
     
 tweets['text'] = tweets['text'].apply(lambda tweet: remove_link(tweet)) # Remove links from text
@@ -106,9 +107,29 @@ tweets['handles'] = tweets['text'].apply(lambda tweet: twitter_handle(tweet)) # 
 
 def remove_handle(text): # Remove handles from text
     for link in text:
-        result = re.sub(r'@[a-zA-Z_0-9]{4,}', '', text)
-        print ("\n\nHandle free:\n", result)
-        return result
+        try:
+            result = re.sub(r'@[a-zA-Z_0-9]{4,}', '', text)
+            #print ("\n\nHandle free:\n", result)
+            return result
+        except:
+            pass
+
+
+#%%          
+
+#re.match returns None if it cannot find a match. Probably the cleanest solution to this problem is to just do this:
+
+# There is no need for the try/except anymore
+match = re.match(r'^(\S+) (.*?) (\S+)$', full)
+if match is not None:
+    clean = filter(None, match.groups())
+else:
+    clean = ""
+#Note that you could also do if match:, but I personally like to do 
+# if match is not None: because it is clearer. 
+# "Explicit is better than implicit" remember. ;)
+
+#%%
     
 tweets['text'] = tweets['text'].apply(lambda tweet: remove_handle(tweet)) # Remove all twitter-handles from text 
 
