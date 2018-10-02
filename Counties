@@ -54,3 +54,27 @@ tweets["zipcode"] = [search.by_coordinates(val1[1], val1[0], radius=r, returns=1
 
 tweets["zipcode"] = [search.by_coordinates(val1[1], val1[0], radius=4, returns=1) 
                      for val1 in tweets["location_centeroid"]]
+
+
+lister1 = []
+lister2 = []
+tweets_zipcode = tweets["zipcode"]
+
+for ijk in range(tweets_zipcode.size):
+    entry = tweets_zipcode[ijk]
+    len_entry = len(entry)
+    if len_entry>0:
+        lister1.append(entry[0].county)
+    else:
+        lister1.append([])
+
+for ijk in range(tweets_zipcode.size):
+    entry = tweets_zipcode[ijk]
+    len_entry = len(entry)
+    if len_entry>0:
+        lister2.append(entry[0].state)
+    else:
+        lister2.append([])
+
+tweets["county"] = lister1
+tweets["state"] = lister2
