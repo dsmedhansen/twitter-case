@@ -26,6 +26,7 @@ The overall goal of this assignment will be to show differences in a selected gr
         
   - Get report writing up-and-runnning (Daniel)
   - Build model to predict results of elections (regression)
+  - Run topic model for two battleground states and compare output
 
 For the ones new to Github (like me) this short video was pretty helpful in explaining how it works: https://www.youtube.com/watch?v=0fKg7e37bQE
 
