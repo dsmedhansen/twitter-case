@@ -1,0 +1,1001 @@
+	sentiment	handles	language	country	county	state
+0	0.0	['@theblaze', '@realDonaldTrump']	und	United States	St. Louis County	MO
+1	0.0	['@BarackObama', '@LORETTALYNCH', '@realDonaldTrump']	en	United States	East Baton Rouge Parish	LA
+2	0.0	['@theblaze', '@realDonaldTrump']	und	United States	St. Louis County	MO
+3	0.0	['@HillaryClinton']	en	Australia		
+4	0.3818		en	United States	Baltimore city	MD
+5	0.0	['@realDonaldTrump']	en	United States	Riverside County	CA
+6	0.0		und	United Kingdom		
+7	0.4215	['@funnyordie', '@realDonaldTrump']	en	United States	Hudson County	NJ
+8	-0.8834	['@HillaryClinton']	en	United States	Dallas County	TX
+9	0.0772	['@Geraldanthro', '@NeilTurner_', '@realDonaldTrump', '@washingtonpost']	en	Australia		
+10	0.4404	['@mike4193496', '@realDonaldTrump']	en	United States	Calvert County	MD
+11	-0.959	['@realDonaldTrump', '@elsolarverde']	en	United States	Calhoun County	MI
+12	0.0	['@HillaryClinton', '@realDonaldTrump']	en	United States	Jefferson County	KY
+13	-0.6908	['@CribBoss', '@WesSmith123', '@realDonaldTrump']	en	United States	Scott County	IA
+14	0.0	['@HillaryClinton', '@TeamUSA', '@realDonaldTrump']	en	Australia		
+15	-0.5267		en	United States		
+16	-0.765	['@HillaryClinton']	en	United States	Dallas County	TX
+17	0.0		en	Italy		
+18	-0.7003	['@sherrilee7', '@seanhannity', '@HillaryClinton']	en	United States	Alachua County	FL
+19	-0.5574	['@realDonaldTrump']	en	Indonesia		
+20	0.4215	['@RT_Erdogan', '@econofpak', '@Asad_Umar', '@AsimBajwaISPR', '@HillaryClinton']	en	Pakistan		
+21	0.0	['@HillaryClinton']	en	United States	Dallas County	TX
+22	-0.4019	['@HillaryClinton', '@TeamUSA', '@realDonaldTrump']	en	Australia		
+23	-0.4404	['@NAHBhome', '@realDonaldTrump', '@JoeNBC']	en	United States		
+24	-0.743		en	United States	St. Lucie County	FL
+25	0.1531	['@realDonaldTrump']	en	United States	Solano County	CA
+26	0.25	['@BarackObama', '@HillaryClinton', '@FoxNews']	en	United States	Middlesex County	MA
+27	0.1779	['@LouDobbs', '@realDonaldTrump', '@FoxNews']	en	United States	Orange County	CA
+28	-0.2732		en	United States	Philadelphia County	PA
+29	0.0		en	United Kingdom		
+30	0.5859	['@realDonaldTrump']	en	United States		
+31	0.7717	['@HillaryClinton']	en	Italia		
+32	-0.8126		en	United States	Riverside County	CA
+33	-0.4767	['@realDonaldTrump', '@elsolarverde']	en	Indonesia		
+34	0.0	['@realDonaldTrump']	en	United States	Arlington County	VA
+35	-0.1531	['@realDonaldTrump']	en	United States	Maricopa County	AZ
+36	0.6249	['@realDonaldTrump']	en	United States	Miller County	MO
+37	0.0	['@realDonaldTrump']	und	United States	St. Louis County	MO
+38	-0.2263	['@LouDobbs', '@realDonaldTrump', '@FoxNews']	en	United States	Macomb County	MI
+39	0.0		en	United States	Baltimore city	MD
+40	-0.743	['@realDonaldTrump']	en	United States	New York County	NY
+41	0.296		en	United States	Salt Lake County	UT
+42	0.0	['@realDonaldTrump']	und	United States	St. Louis County	MO
+43	0.0	['@dustin_barnes02', '@LyndaG1963', '@HillaryClinton']	en	United States		
+44	0.0	['@NewDay', '@ChrisCuomo', '@realDonaldTrump']	en	United States	New York County	NY
+45	0.5859		en	United States		
+46	-0.4404	['@reg1776', '@HillaryClinton']	en	United States	Madison County	NY
+47	-0.7184		en	United States	Baltimore city	MD
+48	-0.8519	['@JoeNBC', '@realDonaldTrump']	en	United States		
+49	0.0	['@MichaelCohen212', '@NewDay', '@ChrisCuomo', '@realDonaldTrump']	und	United States	St. Louis County	MO
+50	-0.6705		en	United States	Baltimore city	MD
+51	0.743	['@AJDelgado13', '@HarveyAckerman', '@realDonaldTrump']	en	Canada		
+52	0.0	['@MichaelCohen212', '@NewDay', '@ChrisCuomo', '@realDonaldTrump']	und	United States	St. Louis County	MO
+53	0.0	['@MichaelCohen212', '@NewDay', '@ChrisCuomo', '@realDonaldTrump']	und	United States	St. Louis County	MO
+54	-0.5106	['@realDonaldTrump']	en	Vietnam		
+55	0.6124	['@Varneyco', '@JudgeMoroz', '@KatrinaPierson', '@realDonaldTrump']	en	Canada		
+56	0.0258	['@RealKhizrKhan', '@HillaryClinton']	en	United States	Burlington County	NJ
+57	0.0	['@izzysteph1', '@CWestwood1985', '@realDonaldTrump']	und	United States	Dallas County	TX
+58	0.0	['@MichaelCohen212', '@NewDay', '@ChrisCuomo', '@realDonaldTrump']	und	United States	St. Louis County	MO
+59	0.0		in	Singapur		
+60	0.0	['@MichaelCohen212', '@NewDay', '@ChrisCuomo', '@realDonaldTrump']	und	United States	St. Louis County	MO
+61	-0.4019	['@realDonaldTrump', '@JoeNBC']	en	United States		
+62	0.0		und	United States		
+63	0.0	['@MichaelCohen212', '@NewDay', '@ChrisCuomo', '@realDonaldTrump']	und	United States	St. Louis County	MO
+64	0.0	['@MichaelCohen212', '@NewDay', '@ChrisCuomo', '@realDonaldTrump']	und	United States	St. Louis County	MO
+65	0.0	['@MichaelCohen212', '@NewDay', '@ChrisCuomo', '@realDonaldTrump']	und	United States	St. Louis County	MO
+66	0.0	['@realDonaldTrump', '@elsolarverde', '@_Gerasim_']	und	Россия		
+67	0.0	['@MichaelCohen212', '@NewDay', '@ChrisCuomo', '@realDonaldTrump']	und	United States	St. Louis County	MO
+68	0.0		und	United States	Hidalgo County	TX
+69	0.0	['@MichaelCohen212', '@NewDay', '@ChrisCuomo', '@realDonaldTrump']	und	United States	St. Louis County	MO
+70	-0.25	['@DirtyCoastDawg', '@Patriotic_Me', '@HillaryClinton', '@RealStrategyFan', '@YouTube']	en	United States		
+71	0.0	['@MichaelCohen212', '@NewDay', '@ChrisCuomo', '@realDonaldTrump']	und	United States	St. Louis County	MO
+72	0.0	['@HillaryClinton', '@realDonaldTrump']	en	Australia		
+73	-0.5106	['@realDonaldTrump']	en	Vietnam		
+74	0.0	['@MichaelCohen212', '@NewDay', '@ChrisCuomo', '@realDonaldTrump']	und	United States	St. Louis County	MO
+75	-0.5106	['@realDonaldTrump']	en	Vietnam		
+76	0.0	['@downtownusa1', '@MichaelCohen212', '@NewDay', '@ChrisCuomo', '@realDonaldTrump']	und	United States	St. Louis County	MO
+77	-0.6597	['@JesseRodriguez', '@realDonaldTrump', '@JoeNBC']	en	United States		
+78	-0.296	['@FoxNews', '@RealBenCarson', '@realDonaldTrump']	en	United States	Autauga County	AL
+79	0.0	['@downtownusa1', '@MichaelCohen212', '@NewDay', '@ChrisCuomo', '@realDonaldTrump']	und	United States	St. Louis County	MO
+80	-0.5106	['@realDonaldTrump']	en	Vietnam		
+81	-0.296	['@realDonaldTrump', '@EnemyWithinn', '@elsolarverde', '@nytimesMedia']	en	United States		
+82	0.0	['@downtownusa1', '@MichaelCohen212', '@NewDay', '@ChrisCuomo', '@realDonaldTrump']	und	United States	St. Louis County	MO
+83	0.296	['@realDonaldTrump', '@HillaryClinton']	en	United States	Jefferson County	KY
+84	-0.5106	['@realDonaldTrump', '@HillaryClinton', '@JoeNBC', '@LouDobbs']	en	United States	Nassau County	NY
+85	0.0	['@downtownusa1', '@MichaelCohen212', '@NewDay', '@ChrisCuomo', '@realDonaldTrump']	und	United States	St. Louis County	MO
+86	0.296		en	Canada		
+87	0.0	['@FoxNews', '@realDonaldTrump', '@HillaryClinton']	en	United States	Fairfield County	CT
+88	0.0772	['@Danno_a_Jyd']	en	United States		
+89	0.0	['@foxandfriends', '@realDonaldTrump']	und	United States	St. Louis County	MO
+90	0.6369	['@realDonaldTrump', '@MarkFlitz']	en	United States		
+91	0.0	['@foxandfriends', '@realDonaldTrump']	und	United States	St. Louis County	MO
+92	0.624		en	United Kingdom		
+93	0.0	['@DirtyCoastDawg', '@Patriotic_Me', '@HillaryClinton']	und	United States		
+94	-0.6997		en	United States	Schuylkill County	PA
+95	0.34	['@foxandfriends', '@realDonaldTrump']	en	United States	St. Louis County	MO
+96	-0.8225	['@MagicRoyalty', '@HillaryClinton']	en	United States	Broward County	FL
+97	0.0	['@elizabethforma', '@realDonaldTrump']	en	United States	Pulaski County	AR
+98	-0.5106	['@realDonaldTrump']	en	Vietnam		
+99	0.0	['@foxandfriends', '@realDonaldTrump']	und	United States	St. Louis County	MO
+100	-0.5859	['@realDonaldTrump', '@mike_pence', '@JoeNBC', '@morningmika', '@WillieGeist']	en	United States		
+101	0.0	['@foxandfriends', '@realDonaldTrump']	und	United States	St. Louis County	MO
+102	0.0	['@HillaryClinton']	en	United States	Dallas County	TX
+103	0.0		en	United States	Pulaski County	AR
+104	0.0	['@Lawrence', '@realDonaldTrump']	en	United States	King George County	VA
+105	0.743	['@AdamZebra', '@realDonaldTrump']	en	Canada		
+106	0.34	['@ChrisCuomo']	en	United States	Baltimore city	MD
+107	0.0258	['@realDonaldTrump']	en	United States		
+108	-0.1027	['@realDonaldTrump']	en	France		
+109	0.0	['@HillaryClinton', '@HuffPostPol', '@lEllenDeGeneres', '@MotherJones']	en	United States	Philadelphia County	PA
+110	-0.4588	['@MustMAGA16', '@HillaryClinton']	en	United States	Broward County	FL
+111	0.0	['@livenewscloud', '@elizabethforma', '@realDonaldTrump']	en	United States	Pulaski County	AR
+112	-0.25	['@BlissTabitha', '@SilasKLee']	en	United States		
+113	0.0772	['@HillaryClinton']	en	United States		
+114	0.0		en	United States	Greenville County	SC
+115	0.8155	['@MikeNellis', '@Marmel', '@realDonaldTrump']	en	United States	New Castle County	DE
+116	0.0	['@DebAlwaystrump', '@USAforTrump2016', '@realDonaldTrump']	und	United States	St. Lucie County	FL
+117	0.0	['@rgreersmith']	en	United Kingdom		
+118	0.0	['@FL_Politico', '@realDonaldTrump', '@CNNPolitics']	en	United States	Broward County	FL
+119	0.8442	['@realDonaldTrump']	en	United Kingdom		
+120	-0.3612	['@EnemyWithinn', '@HunterHRC2016', '@HillaryClinton']	en	United States	Broward County	FL
+121	0.3182	['@HuffPostPol']	en	Canada		
+122	0.0	['@HillaryClinton']	en	United States	Hernando County	FL
+123	0.4019	['@HillaryClinton', '@realDonaldTrump']	en	Australia		
+124	-0.6486	['@VickyBrush', '@donlemon', '@realDonaldTrump']	en	United States	Duval County	FL
+125	0.7906		en	United States	New York County	NY
+126	-0.4019	['@realDonaldTrump']	en	United States	Jackson County	OK
+127	0.8176		en	United States	Hartford County	CT
+128	0.4019	['@ChristiChat']	en	United Kingdom		
+129	0.3612		en	United States	Cook County	IL
+130	0.0		en	United States	Lancaster County	PA
+131	-0.5719		en	United States	Dallas County	TX
+132	0.6486	['@realDonaldTrump']	en	United States		
+133	0.6124	['@JohnMillerNot', '@realDonaldTrump']	en	Canada		
+134	-0.6597	['@realDonaldTrump']	en	United States		
+135	0.6124	['@imtracywilson1', '@collectdollsale', '@CALA_1111', '@realDonaldTrump', '@realDonaldTrump']	en	Canada		
+136	0.743	['@PoweredByTruth', '@realDonaldTrump']	en	Canada		
+137	0.2732	['@realDonaldTrump']	en	United Kingdom		
+138	0.3182	['@realDonaldTrump']	en	United States	Williamson County	TX
+139	0.0	['@realDonaldTrump']	en	United States		
+140	-0.3182	['@realDonaldTrump']	en	United States	Knox County	TN
+141	-0.7506	['@realDonaldTrump']	en	United States	Middlesex County	MA
+142	0.0		de	Deutschland		
+143	0.0	['@Eric_Kennedy_']	und	United States	Hidalgo County	TX
+144	-0.4877	['@realDonaldTrump', '@JoeNBC', '@LouDobbs']	en	United States	Nassau County	NY
+145	-0.6908	['@realDonaldTrump']	en	United States		
+146	0.1531	['@realDonaldTrump', '@HillaryClinton']	en	United States		
+147	0.0	['@progressivepush', '@realDonaldTrump']	en	United States	Calcasieu Parish	LA
+148	0.0	['@realDonaldTrump']	en	United States		
+149	0.0	['@realDonaldTrump']	und	United States	Dallas County	TX
+150	-0.1027	['@realDonaldTrump']	en	United States		
+151	0.6486	['@BlueTeam007', '@HillaryClinton']	en	United States	Miller County	MO
+152	0.0	['@realDonaldTrump']	en	United States	Middlesex County	MA
+153	0.0	['@realDonaldTrump']	en	United States	Calcasieu Parish	LA
+154	0.0	['@realDonaldTrump']	en	United States		
+155	0.0	['@realDonaldTrump']	und	United States		
+156	0.0	['@realDonaldTrump']	en	United States	Calcasieu Parish	LA
+157	-0.5267	['@realDonaldTrump', '@SheriffClarke', '@ForeignPolicy']	en	United States	Union County	NJ
+158	0.0	['@TedCowart', '@HillaryClinton']	en	United States	Sedgwick County	KS
+159	0.1531	['@realDonaldTrump']	en	United Kingdom		
+160	0.0		fr	France		
+161	-0.5423	['@therussophile', '@RT_Erdogan', '@PutinRF_Eng', '@realDonaldTrump', '@AllenWest', '@RT_com']	en	Australia		
+162	0.0	['@realDonaldTrump']	en	United States	Polk County	MO
+163	-0.6908	['@BarackObama', '@netanyahu', '@realDonaldTrump']	en	Nederland		
+164	-0.4767	['@realDonaldTrump', '@Morning_Joe']	en	United States	New York County	NY
+165	0.0		en	United States	Jackson County	MS
+166	-0.5994	['@HillaryClinton', '@billclinton']	en	United States	Autauga County	AL
+167	0.0	['@realDonaldTrump', '@HillaryClinton']	en	United States	Coles County	IL
+168	0.0	['@Time', '@BoingBoing']	en	United Kingdom		
+169	0.0	['@realDonaldTrump']	en	United States	Dallas County	TX
+170	-0.128	['@ThomasB00001', '@HillaryClinton']	en	United States	Baltimore city	MD
+171	-0.2732	['@HillaryClinton', '@realDonaldTrump']	en	Australia		
+172	0.0		en	United States	Jackson County	MO
+173	0.0	['@realDonaldTrump']	en	United States	Niagara County	NY
+174	-0.6908	['@realDonaldTrump', '@Morning_Joe', '@JoeNBC', '@morningmika']	en	United States		
+175	0.34	['@BarackObama', '@realDonaldTrump', '@theGeorgeWB']	en	United States		
+176	0.6369	['@realDonaldTrump']	en	United Kingdom		
+177	0.6124	['@imtracywilson1', '@DanScavino', '@irshroz', '@realDonaldTrump', '@realDonaldTrump']	en	Canada		
+178	0.743	['@secularstupiddd', '@realDonaldTrump']	en	Canada		
+179	0.2732	['@ercohn', '@DarthBawar', '@realDonaldTrump', '@michaeldweiss', '@donlemon']	en	Sverige		
+180	0.0	['@Corporatocrazy', '@EconDemocracy1', '@NewYorker', '@realDonaldTrump']	en	United States	Pulaski County	AR
+181	0.0	['@rharrisonfries', '@mike4193496', '@realDonaldTrump']	en	United States	Calvert County	MD
+182	0.0772	['@realDonaldTrump']	en	United States		
+183	0.7845	['@Sherribaron1', '@LindaSuhler', '@ErickaJacobs123', '@BreitbartNews', '@realDonaldTrump']	en	United States	Orangeburg County	SC
+184	0.0258	['@realDonaldTrump', '@EnemyWithinn', '@elsolarverde', '@nytimes']	en	United States		
+185	0.0	['@HillaryClinton']	en	United States	Wake County	NC
+186	-0.5267	['@realDonaldTrump']	en	United States		
+187	-0.5859	['@DanScavino', '@realDonaldTrump']	en	South Africa		
+188	0.0	['@realDonaldTrump']	en	Australia		
+189	0.0	['@realDonaldTrump']	und	Deutschland		
+190	-0.0516	['@ArthurA_P']	en	United States	Baltimore city	MD
+191	0.0	['@realDonaldTrump']	en	United States	Middlesex County	MA
+192	-0.2263	['@realDonaldTrump']	en	United States	St. Lucie County	FL
+193	0.0516	['@TheDailyShow', '@Trevornoah']	en	United States	Albany County	NY
+194	-0.5106	['@realDonaldTrump', '@hughhewitt']	en	India		
+195	0.0	['@HillaryClinton', '@seanshhh', '@seanhannity', '@JudgeJeanine', '@ericbolling', '@realDonaldTrump']	und	United States	Hernando County	FL
+196	0.0	['@realDonaldTrump']	en	United States	Middlesex County	MA
+197	-0.8126	['@realDonaldTrump', '@elsolarverde']	en	United States	Union County	NJ
+198	0.5994	['@MichaelCohen212', '@NewDay', '@ChrisCuomo', '@realDonaldTrump']	en	United States	Jackson County	MO
+199	0.0	['@dawnellemurray', '@LouDobbs', '@realDonaldTrump', '@FoxBusiness']	en	United Kingdom		
+200	-0.5267	['@realDonaldTrump']	en	United States	Camden County	NJ
+201	0.0	['@HillaryClinton', '@ScottBaio', '@billclinton', '@smp0711', '@realDonaldTrump']	en	United States	Jefferson County	TX
+202	0.1027	['@realDonaldTrump', '@LouDobbs', '@HillaryClinton', '@JoeNBC']	en	United States	Nassau County	NY
+203	0.0		in	Singapur		
+204	-0.6908	['@realDonaldTrump']	en	Canada		
+205	0.4939	['@realDonaldTrump']	en	United States	Madison County	NY
+206	0.5423	['@realDonaldTrump']	en	United States		
+207	-0.4767	['@BarackObama', '@realDonaldTrump']	en	Australia		
+208	0.2732	['@CupcakesTLH', '@realDonaldTrump']	en	United States	Williamson County	TX
+209	0.2023	['@realDonaldTrump']	en	United States	Miller County	MO
+210	0.0		en	United States	San Diego County	CA
+211	0.0	['@realDonaldTrump']	en	United States	Montgomery County	MD
+212	0.0	['@RealJamesComey', '@RichardPerry20', '@Jsauli11211', '@TrumpDoral', '@Bucky_Breeder', '@crawleykakes', '@patrioticpepe', '@realDonaldTrump']	in	Mexico		
+213	0.0	['@selenagomez', '@HillaryClinton', '@hillaryduff24']	en	United States	Harris County	TX
+214	0.6369	['@birdieglad', '@HillaryClinton', '@abronxchick', '@Wary12', '@jihettly', '@Debi129']	en	United States	Delaware County	PA
+215	0.743	['@MyPlace4U', '@daytrend', '@MONEY', '@realDonaldTrump']	en	Canada		
+216	0.0	['@realDonaldTrump']	und	United States	Sarasota County	FL
+217	0.0		en	United States	Cobb County	GA
+218	-0.5267	['@realDonaldTrump']	en	United States	Camden County	NJ
+219	0.6597	['@realDonaldTrump', '@EnemyWithinn', '@elsolarverde', '@nytimes']	en	United States	Union County	NJ
+220	-0.4404		en	United States	Baltimore city	MD
+221	0.2732	['@realDonaldTrump', '@SuckMeter']	en	United States	Allegheny County	PA
+222	0.0		en	Japan		
+223	-0.4767	['@ActivistBowen2', '@K1er']	en	United States		
+224	0.4019	['@realDonaldTrump']	en	United States		
+225	0.7003	['@realDonaldTrump', '@foxandfriends']	en	United States	St. Tammany Parish	LA
+226	0.0	['@Morning_Joe', '@realDonaldTrump']	en	United States		
+227	0.0		en	United States		
+228	0.0		en	United States	Cuyahoga County	OH
+229	0.0258		en	United States	Baltimore city	MD
+230	0.0	['@POTUS', '@HillaryClinton']	und	United States	Middlesex County	NJ
+231	-0.5106	['@realDonaldTrump']	en	United States		
+232	0.3818	['@Morning_Joe']	en	United States	Dallas County	TX
+233	0.5267	['@realDonaldTrump']	en	United States	Albemarle County	VA
+234	0.0		fr	Grèce		
+235	0.34	['@BarackObama', '@realDonaldTrump']	en	Australia		
+236	-0.3182	['@realDonaldTrump']	en	Italy		
+237	0.0	['@realDonaldTrump']	en	Canada		
+238	0.5267	['@realDonaldTrump']	en	South Africa		
+239	0.0	['@realDonaldTrump']	en	United States	Carver County	MN
+240	0.0	['@USAforTrump2016', '@realDonaldTrump']	en	United States		
+241	-0.0772	['@realDonaldTrump']	en	United States		
+242	0.0	['@realDonaldTrump', '@SheriffClarke']	en	United States	Milwaukee County	WI
+243	0.0	['@doglover100', '@realDonaldTrump']	en	United States	Macomb County	MI
+244	0.0	['@donarndt248', '@HillaryClinton', '@Morning_Joe']	en	United States		
+245	0.4019	['@morningmika', '@realDonaldTrump']	en	United States	Allegheny County	PA
+246	-0.802	['@JYSexton', '@realDonaldTrump']	en	United States	Camden County	NJ
+247	-0.836	['@CLewandowski']	en	United States	Baltimore city	MD
+248	-0.765	['@realDonaldTrump']	en	Italy		
+249	-0.3182	['@realDonaldTrump']	en	Spain		
+250	0.4767	['@HillaryClinton']	en	United States	Cumberland County	ME
+251	-0.6486	['@SenToomey', '@HillaryClinton']	en	United States	Philadelphia County	PA
+252	0.0		en	United States	San Mateo County	CA
+253	-0.6597	['@realDonaldTrump']	en	United States	Iredell County	NC
+254	0.34	['@ToddDracula', '@realDonaldTrump', '@vine']	en	United States	York County	SC
+255	0.2732	['@realDonaldTrump']	en	United States	Alpena County	MI
+256	-0.5267		en	United States	Bergen County	NJ
+257	0.0	['@realDonaldTrump']	en	United States	Monmouth County	NJ
+258	-0.6808		en	United States		
+259	-0.6808	['@realDonaldTrump']	en	United States		
+260	0.2732	['@realDonaldTrump', '@foxandfriends', '@FoxNews']	en	United States	St. Tammany Parish	LA
+261	0.6369	['@realDonaldTrump']	en	United States	Cannon County	TN
+262	0.2732		en	Nigeria		
+263	0.3612	['@Juliet777777']	en	Australia		
+264	0.4404	['@ZinaCPierre', '@HillaryClinton']	en	United States	Wayne County	MI
+265	-0.3612		en	United States	Mesa County	CO
+266	-0.5106		en	United States		
+267	-0.743	['@realDonaldTrump']	en	United States	Dallas County	TX
+268	0.7906	['@realDonaldTrump']	en	United States	Calvert County	MD
+269	-0.5423	['@realDonaldTrump']	en	Mexico		
+270	-0.4915	['@HillaryClinton', '@TeamUSA']	en	Greece		
+271	-0.34	['@ChrisCuomo']	en	United States	Baltimore city	MD
+272	0.2732	['@foxandfriends', '@FoxNews', '@realDonaldTrump']	en	United States	St. Tammany Parish	LA
+273	-0.7579	['@realDonaldTrump']	en	United States	Fauquier County	VA
+274	0.0		en	United States	Los Angeles County	CA
+275	0.0		en	Nigeria		
+276	0.0	['@realDonaldTrump']	en	United Kingdom		
+277	0.0	['@ClintonFdn', '@billcliinton', '@HillaryClinton']	en	United States	Autauga County	AL
+278	0.4019	['@CapehartJ', '@realDonaldTrump', '@POTUS']	en	United States	Rankin County	MS
+279	0.6597	['@realDonaldTrump']	en	United States	Davis County	UT
+280	0.0	['@FoxNews', '@realDonaldTrump']	en	United States	Lee County	FL
+281	-0.5719	['@realDonaldTrump']	hi	United States	Plymouth County	MA
+282	0.4404	['@realDonaldTrump']	en	United States		
+283	0.0	['@bitteranagram', '@realDonaldTrump']	en	United States	Wake County	NC
+284	-0.25	['@yelli1972', '@realDonaldTrump']	en	United States	Kings County	NY
+285	0.6597	['@maggieNYT']	en	United States		
+286	0.0		en	United States	Harrison County	MS
+287	0.4215	['@seanhannity', '@HillaryClinton']	en	United States		
+288	0.0	['@piersmorgan', '@realDonaldTrump']	en	United Kingdom		
+289	0.1027	['@realDonaldTrump']	en	United States		
+290	0.34	['@thehill', '@realDonaldTrump']	en	United States		
+291	0.4019		en	United States		
+292	-0.2263	['@NewDay', '@realDonaldTrump']	en	Canada		
+293	0.2023	['@realDonaldTrump']	en	United States		
+294	0.0	['@realDonaldTrump']	und	United States	Orangeburg County	SC
+295	0.0772	['@realDonaldTrump']	en	United States		
+296	0.0		en	United States	Los Angeles County	CA
+297	0.5267	['@realDonaldTrump']	en	United States	Norfolk County	MA
+298	0.5423	['@JonMeecham', '@Morning_Joe']	en	United States	Dallas County	TX
+299	-0.8481	['@realDonaldTrump']	en	United States	Orange County	NY
+300	0.0	['@realDonaldTrump']	en	United States	Calcasieu Parish	LA
+301	0.2732	['@realDonaldTrump']	en	United States		
+302	-0.5719	['@BillKristol']	en	United States	Delaware County	PA
+303	-0.0772		en	United States	Nassau County	NY
+304	0.0	['@realDonaldTrump']	en	United States	Calcasieu Parish	LA
+305	-0.2263	['@WillMcAvoyACN', '@realDonaldTrump']	en	United States		
+306	0.0	['@realDonaldTrump']	und	United Kingdom		
+307	0.0772	['@ToddDracula', '@realDonaldTrump', '@vine']	en	United States	Fulton County	GA
+308	-0.2023	['@realDonaldTrump']	en	United States	St. Tammany Parish	LA
+309	0.6808	['@wpbf_erin', '@wpbf_stephanie', '@MarkKellyWPBF', '@WPBF_Vanessa', '@HillaryClinton']	en	United States	Palm Beach County	FL
+310	-0.7269	['@realDonaldTrump']	en	United States		
+311	-0.2732	['@BillKristol']	en	United States	Delaware County	PA
+312	-0.5719	['@WSAZnews', '@realDonaldTrump']	en	United States	Scioto County	OH
+313	-0.2732	['@frankthorp', '@realDonaldTrump']	en	United States	Wilkes County	NC
+314	0.0	['@realDonaldTrump']	en	United States	Dallas County	TX
+315	-0.5859	['@seanhannity', '@JudgeJeanine', '@MonicaCrowley', '@LisaMarieBoothe']	en	United States		
+316	-0.5574	['@realDonaldTrump']	en	United States	Benton County	AR
+317	0.0		und	United States	King County	WA
+318	0.0	['@WeThePeopleFor', '@realDonaldTrump']	en	Mexico		
+319	0.2023	['@realDonaldTrump']	en	United States	Hartford County	CT
+320	0.0	['@realDonaldTrump', '@EnemyWithinn', '@elsolarverde', '@nytimes']	en	United States	Queens County	NY
+321	0.0		en	United States		
+322	-0.0516	['@jimboazil', '@donlemon', '@HillaryClinton', '@realDonaldTrump']	en	United States	Maricopa County	AZ
+323	-0.5859	['@hughhewitt', '@realDonaldTrump']	en	United States	Lorain County	OH
+324	0.0	['@realDonaldTrump', '@elsolarverde']	en	Canada		
+325	-0.6124	['@realDonaldTrump']	en	United States	Autauga County	AL
+326	0.3182	['@realDonaldTrump']	en	United States	Lexington County	SC
+327	0.0		en	United States	Cannon County	TN
+328	0.2732	['@realDonaldTrump', '@elsolarverde']	en	United States	Queens County	NY
+329	0.3818	['@realDonaldTrump']	en	United States		
+330	-0.4767	['@bernardtyers', '@elreiss', '@TheOnion', '@realDonaldTrump']	en	United Kingdom		
+331	0.0	['@HillaryClinton', '@pagesix']	en	United States		
+332	0.0		en	United States	Macomb County	MI
+333	-0.0516	['@seanhannity', '@HillaryClinton', '@RealBenCarson', '@drdavidsamadi', '@DrMarcSiegel']	en	United States		
+334	-0.296	['@realDonaldTrump', '@WeNeedTrump']	en	United States	Harrison County	MS
+335	0.4939		en	United States	Milwaukee County	WI
+336	-0.4215	['@realDonaldTrump']	en	United States		
+337	0.2732	['@seanhannity', '@MADE__USA', '@realDonaldTrump']	en	United States		
+338	-0.0772	['@realDonaldTrump']	en	Australia		
+339	0.0	['@Loqueespananove', '@HillaryClinton', '@YouTube']	es	España		
+340	-0.25	['@brianstelter', '@realDonaldTrump']	en	United States		
+341	0.0	['@TomLlamasABC']	en	United States	Allegheny County	PA
+342	0.4588		en	United States		
+343	0.6369		en	United States	Montgomery County	MD
+344	-0.1989	['@realDonaldTrump']	en	United States	Washington County	MN
+345	0.1511	['@realDonaldTrump']	en	United States	Allegheny County	PA
+346	0.7717		en	United States	Milwaukee County	WI
+347	-0.296		en	United States	Harrison County	MS
+348	0.0		en	United States	Cuyahoga County	OH
+349	0.0	['@realDonaldTrump']	en	United States	Butler County	PA
+350	0.0	['@azizansari', '@Drake', '@realDonaldTrump', '@MeekMill']	en	Hungary		
+351	-0.8481	['@JeffreyGuterman', '@realDonaldTrump']	en	United States	Pulaski County	AR
+352	0.4019		en	United States		
+353	0.0		en	Canada		
+354	0.8779	['@realDonaldTrump']	en	United States		
+355	0.0	['@realDonaldTrump']	en	United States		
+356	0.1027	['@realDonaldTrump', '@HillaryClinton']	en	Canada		
+357	-0.3412	['@Morning_Joe', '@realDonaldTrump']	en	United States		
+358	0.296	['@jimboazil', '@donlemon', '@HillaryClinton', '@realDonaldTrump']	en	United States	Maricopa County	AZ
+359	0.0		de	Ireland		
+360	-0.6369	['@JeffreyGuterman', '@realDonaldTrump']	en	United States	Pulaski County	AR
+361	0.4215	['@Morning_Joe']	en	United States	Providence County	RI
+362	0.0		en	United States	Suffolk County	NY
+363	0.2732	['@FoxNews', '@GovMikeHuckabee', '@realDonaldTrump']	en	United States	Benton County	AR
+364	-0.2263		en	United States	New York County	NY
+365	0.0	['@ItsKayBee', '@BarackObama', '@HillaryClinton']	en	United States		
+366	0.0	['@Morning_Joe', '@realDonaldTrump']	en	United States	Orangeburg County	SC
+367	0.0		de	United States	Milwaukee County	WI
+368	0.0	['@ket89', '@realDonaldTrump']	en	United States	St. Lucie County	FL
+369	-0.2263	['@realDonaldTrump', '@POTUS']	en	United States	Bronx County	NY
+370	0.5106	['@realDonaldTrump', '@SenTomCotton', '@RepMikePompeo', '@Reince']	en	United States	Los Angeles County	CA
+371	0.3612	['@realDonaldTrump']	en	United States	Erie County	PA
+372	-0.296	['@realDonaldTrump']	en	United States	Summit County	OH
+373	-0.296	['@realDonaldTrump']	en	United States	Montgomery County	PA
+374	-0.7717	['@proadstudio', '@ConserValidity', '@TeaPainUSA']	en	Denmark		
+375	0.6597	['@JohnJHarwood', '@hughhewitt', '@realDonaldTrump']	en	United States	Bexar County	TX
+376	0.128	['@ClintonFdn', '@dailycaller']	en	United States	Williamson County	TX
+377	0.2732	['@foxandfriends', '@realDonaldTrump']	en	United States	Manatee County	FL
+378	0.0	['@realDonaldTrump', '@benfranklin']	en	United States	Volusia County	FL
+379	-0.0516	['@realDonaldTrump', '@elsolarverde']	en	United States		
+380	0.2411	['@JohnJHarwood', '@hughhewitt', '@realDonaldTrump']	en	United States	Delaware County	PA
+381	0.6124	['@Kimmie_marieme', '@HillaryClinton', '@timkaine', '@realDonaldTrump']	en	Canada		
+382	0.0		in	Singapur		
+383	-0.6908	['@HillaryClinton']	en	United States	Tulsa County	OK
+384	-0.6597	['@realDonaldTrump']	en	New Zealand		
+385	0.4939	['@seanhannity', '@OliverNorthFNC']	en	United States		
+386	0.3182		en	Republic of Korea		
+387	0.0	['@politico', '@realDonaldTrump']	en	United States	Rankin County	MS
+388	0.0		en	United States	Oakland County	MI
+389	-0.3976	['@realDonaldTrump']	en	United States	Cuyahoga County	OH
+390	0.5719	['@tom1234west', '@MagicRoyalty', '@realDonaldTrump']	en	Australia		
+391	0.0		en	United States		
+392	-0.3818	['@realDonaldTrump']	en	United States	Lake County	IL
+393	-0.128		en	United States	Los Angeles County	CA
+394	-0.5106		en	United States	Prince George's County	MD
+395	-0.3818	['@Morning_Joe', '@realDonaldTrump', '@FiveThirtyEight']	en	United States	Allegheny County	PA
+396	0.9231		en	United States	Miami-Dade County	FL
+397	-0.3182		en	United States	Madison County	NY
+398	-0.8591	['@CBSNews', '@SenatorKirk', '@realDonaldTrump']	en	United States	Surry County	NC
+399	0.3612		en	United States	Johnston County	NC
+400	0.743	['@LionlawnmanLion', '@realDonaldTrump']	en	Canada		
+401	0.743	['@JukeWremmari', '@realDonaldTrump']	en	Canada		
+402	-0.4404		en	United Kingdom		
+403	-0.3182		en	Brazil		
+404	0.743	['@Benzztech', '@MarkDice', '@realDonaldTrump']	en	Canada		
+405	0.0	['@JohnJHarwood', '@hughhewitt', '@realDonaldTrump']	en	Canada		
+406	0.6319	['@realDonaldTrump']	en	United States		
+407	0.6808	['@theblaze', '@TRUMP', '@HillaryClinton']	en	United States	Multnomah County	OR
+408	0.6124	['@TheOtherRosie', '@realDonaldTrump', '@realDonaldTrump']	en	Canada		
+409	0.4215	['@costareports', '@realDonaldTrump']	en	United States	Jefferson Parish	LA
+410	-0.4019	['@realDonaldTrump']	en	United States	Lake County	IL
+411	0.743	['@WeNeedTrump', '@realDonaldTrump']	en	Canada		
+412	0.2732	['@realDonaldTrump']	en	Australia		
+413	0.0		en	United States	Suffolk County	NY
+414	-0.6808		en	Denmark		
+415	0.4215	['@realDonaldTrump', '@EnemyWithinn', '@elsolarverde', '@nytimes']	en	United States		
+416	0.0	['@realDonaldTrump', '@boomerforbernie']	en	United States	Guilford County	NC
+417	0.4404	['@realDonaldTrump']	en	United States		
+418	-0.886	['@realDonaldTrump']	en	India		
+419	-0.765		en	United States	Essex County	NJ
+420	0.0	['@NBCNews', '@realDonaldTrump']	en	United States	Surry County	NC
+421	-0.6486	['@realDonaldTrump']	en	United States		
+422	0.0	['@realDonaldTrump', '@laurencristmann', '@C_Lynne_Ryan']	und	United States	Macomb County	MI
+423	0.3612	['@HillaryClinton']	en	United States	Hamilton County	TN
+424	-0.296	['@dorbar', '@HillaryClinton']	en	United States	Maricopa County	AZ
+425	-0.2263	['@hughhewitt', '@realDonaldTrump']	en	United States	Philadelphia County	PA
+426	-0.25	['@realDonaldTrump', '@HillaryClinton']	en	Brazil		
+427	0.743	['@thegatekeeper78', '@realDonaldTrump']	en	Canada		
+428	0.7096		en	United States	Clark County	NV
+429	0.4404	['@DanScavino']	en	United States	Clarke County	GA
+430	0.2023	['@realDonaldTrump']	en	United States	Dallas County	TX
+431	0.0		en	United States	Essex County	NJ
+432	-0.2263	['@realDonaldTrump']	en	United States	Fairfield County	CT
+433	0.0	['@realDonaldTrump', '@laurencristmann', '@C_Lynne_Ryan']	und	United States	Dallas County	TX
+434	0.8126	['@seanhannity']	en	United States		
+435	0.7096	['@ChrisCuomo']	en	United States		
+436	-0.3818	['@realDonaldTrump']	en	United States	Bucks County	PA
+437	0.0		en	United States		
+438	0.0258	['@MSNBC', '@realDonaldTrump']	en	United States	Miami-Dade County	FL
+439	0.743	['@TrumpedAmerica', '@realDonaldTrump']	en	Canada		
+440	0.4019	['@realDonaldTrump']	en	Canada		
+441	-0.6124	['@realDonaldTrump']	en	United States	Autauga County	AL
+442	0.5574	['@foxandfriends', '@realDonaldTrump']	en	United States	Brunswick County	NC
+443	0.743	['@StopKillary2016', '@realDonaldTrump']	en	Canada		
+444	0.4404		en	Canada		
+445	-0.4215		en	United States		
+446	0.0	['@realDonaldTrump']	en	India		
+447	0.0	['@elreiss', '@bernardtyers', '@TheOnion', '@realDonaldTrump']	und	United Kingdom		
+448	0.743	['@TheOtherRosie', '@ReutersTV', '@realDonaldTrump']	en	Canada		
+449	0.0		en	United States	District of Columbia	DC
+450	0.0	['@realDonaldTrump', '@laurencristmann', '@C_Lynne_Ryan']	und	Ireland		
+451	0.743	['@davidpjohnston2', '@realDonaldTrump']	en	Canada		
+452	-0.765	['@foxnation', '@RandPaul', '@realDonaldTrump']	en	United States	Surry County	NC
+453	0.0	['@POTUS']	und	United Kingdom		
+454	0.0	['@ToddDracula', '@realDonaldTrump']	en	United States	Rankin County	MS
+455	0.743	['@stupidLiberal69', '@realDonaldTrump']	en	Canada		
+456	0.4019	['@realDonaldTrump', '@C_Lynne_Ryan']	en	United States		
+457	-0.3182	['@vickieclayb', '@DanRather', '@realDonaldTrump']	en	United States	Franklin County	OH
+458	-0.7003	['@MichaelCohen212', '@realDonaldTrump', '@TheFive']	en	United States		
+459	-0.4767	['@ChrisCuomo', '@ChrisCuomo', '@RudolphGiuliani', '@realDonaldTrump', '@NewDay']	en	United States	Plymouth County	MA
+460	0.0	['@lovusa4', '@realDonaldTrump', '@NewDay', '@foxandfriends']	und	United States		
+461	0.0	['@realDonaldTrump', '@laurencristmann', '@C_Lynne_Ryan']	und	United States	Orangeburg County	SC
+462	0.0	['@realDonaldTrump', '@laurencristmann', '@C_Lynne_Ryan']	en	Italia		
+463	-0.3818	['@realDonaldTrump']	en	United States	District of Columbia	DC
+464	-0.9022	['@FoxNews', '@CNNPolitics', '@MSNBC', '@TheTodayShow', '@realDonaldTrump', '@2016_TrumPence']	da	United States	Mecklenburg County	NC
+465	-0.4767		en	United States	Jackson County	OR
+466	0.5859		en	United States	Middlesex County	NJ
+467	0.5859	['@realDonaldTrump', '@laurencristmann', '@C_Lynne_Ryan']	en	United States		
+468	-0.7906	['@realDonaldTrump']	en	United States	Richmond County	NY
+469	0.4215		und	United States		
+470	0.0	['@realDonaldTrump', '@EnemyWithinn', '@elsolarverde', '@nytimes']	en	United States	Hampshire County	MA
+471	0.0		und	United States	Prince George's County	MD
+472	0.5719	['@VistaJake', '@realDonaldTrump']	en	United States		
+473	0.0516		en	Canada		
+474	-0.4404	['@bhodisvaha', '@Morning_Joe', '@randyprine']	en	United States	Baltimore city	MD
+475	-0.3089	['@shuff1138', '@kupajo322', '@realDonaldTrump', '@EnemyWithinn', '@elsolarverde', '@nytimes', '@HillaryClinton']	en	Australia		
+476	0.0	['@DamidotValerie', '@Europe1', '@realDonaldTrump']	fr	France		
+477	0.0	['@realDonaldTrump']	en	United States	Montgomery County	PA
+478	0.0	['@realDonaldTrump', '@hughhewitt']	en	United States	Orange County	CA
+479	0.0	['@realDonaldTrump']	en	United States	Denver County	CO
+480	0.0	['@politico', '@realDonaldTrump']	en	United States	Lee County	FL
+481	0.0	['@realDonaldTrump', '@laurencristmann', '@C_Lynne_Ryan']	en	United States		
+482	0.8126	['@realDonaldTrump']	en	United States	Dallas County	TX
+483	0.4019	['@realDonaldTrump']	en	India		
+484	0.2023	['@shuff1138', '@kupajo322', '@realDonaldTrump', '@EnemyWithinn', '@elsolarverde', '@nytimes', '@HillaryClinton']	en	Australia		
+485	-0.3818	['@realDonaldTrump']	en	United States	Gaston County	NC
+486	0.0		und	United States	Cook County	IL
+487	-0.2732	['@realDonaldTrump']	en	United States	Dallas County	TX
+488	-0.5859		en	United States	Los Angeles County	CA
+489	0.5994	['@realDonaldTrump']	en	United States	Broward County	FL
+490	-0.2732	['@realDonaldTrump']	en	United States	Travis County	TX
+491	0.1027		en	United States	District of Columbia	DC
+492	0.0		en	United States	Chatham County	GA
+493	0.0		en	United States		
+494	0.0	['@realDonaldTrump', '@HillaryClinton', '@Morning_Joe']	en	United States	Polk County	MO
+495	-0.2263	['@realDonaldTrump']	en	United States	Arlington County	VA
+496	0.0	['@realDonaldTrump', '@laurencristmann', '@C_Lynne_Ryan']	en	United States		
+497	0.0	['@JudiLoera', '@Politisite', '@IvankaTrump', '@EricTrump', '@DonaldJTrumpJr', '@HillaryClinton']	und	United States	Miller County	MO
+498	0.0		en	United States	Essex County	MA
+499	0.0	['@MergatroidFilms', '@realDonaldTrump']	en	United States		
+500	0.0		und	United States		
+501	0.0	['@realDonaldTrump', '@EnemyWithinn', '@elsolarverde', '@nytimes']	en	United States	Madison County	NY
+502	-0.2263	['@realDonaldTrump']	en	United States		
+503	0.3612	['@TheBillyWest']	en	United States	Cook County	IL
+504	0.0	['@cnnbrk', '@MSNBC', '@andersoncooper', '@AC360', '@VanJones68', '@HillaryClinton']	und	United States	San Diego County	CA
+505	0.3182		en	United States	Los Angeles County	CA
+506	0.0		und	United States		
+507	0.2732	['@realDonaldTrump']	fr	France		
+508	-0.6597	['@realDonaldTrump', '@LouDobbs', '@HillaryClinton', '@JoeNBC']	en	United States	Nassau County	NY
+509	0.4019	['@realDonaldTrump']	en	United States		
+510	-0.6908	['@ToddDracula', '@realDonaldTrump']	en	United States	Shelby County	TN
+511	-0.5106		en	United States	Dallas County	TX
+512	-0.3217	['@HKECIA', '@cull0519', '@realDonaldTrump']	en	Australia		
+513	-0.8591	['@IngrahamAngle', '@realDonaldTrump']	en	United States		
+514	0.0	['@realDonaldTrump']	en	United States		
+515	0.4404	['@realDonaldTrump']	en	United States		
+516	0.0		en	United States	Madison County	NY
+517	0.0	['@realDonaldTrump', '@laurencristmann', '@C_Lynne_Ryan0']	und	United States	Polk County	MO
+518	-0.5574	['@MKANTONIO1', '@realDonaldTrump']	en	United States		
+519	0.0		en	United States	Fulton County	GA
+520	0.7906	['@gc4ginger', '@Joenbc']	en	United States	Baltimore city	MD
+521	-0.2263	['@realDonaldTrump']	en	United States	Fulton County	GA
+522	0.3182		en	United States	Travis County	TX
+523	-0.0258	['@realDonaldTrump']	en	United States	Lancaster County	NE
+524	0.0	['@realDonaldTrump', '@seanhannity', '@JudgeJeanine', '@IvankaTrump', '@EricTrump', '@DonaldJTrumpJr', '@newtgingrich', '@PaulManafort']	und	United States	San Diego County	CA
+525	0.1098	['@realDonaldTrump']	en	United States	Burlington County	NJ
+526	0.0		en	United States	Franklin County	OH
+527	-0.4404	['@magnifier661', '@SallyAu81783497', '@HillaryClinton']	en	United States		
+528	-0.6597	['@gntlman', '@Nvr4Get91101', '@HillaryClinton', '@cnnbrk', '@Reuters']	en	United States	Hamilton County	TN
+529	0.0	['@realDonaldTrump', '@laurencristmann']	en	United States	Polk County	MO
+530	-0.3182	['@realDonaldTrump']	en	United States	Miller County	MO
+531	0.2023	['@IngrahamAngle', '@realDonaldTrump', '@BrianRodNYC', '@benshapiro']	en	United States		
+532	0.0	['@politico']	und	United States	Davis County	UT
+533	0.0		en	Denmark		
+534	0.327	['@debsellsslc']	en	United States	Clark County	NV
+535	-0.802		en	United States	Will County	IL
+536	0.2732	['@Bob_Annon', '@realDonaldTrump']	en	United States	Monmouth County	NJ
+537	-0.1531		en	United States	Los Angeles County	CA
+538	-0.5106	['@ZZLaowai', '@realDonaldTrump']	pt	United States	Autauga County	AL
+539	0.1531	['@realDonaldTrump']	en	United States	Oklahoma County	OK
+540	-0.4215	['@SenateDems', '@HillaryClinton', '@moveon']	en	United States	Middlesex County	NJ
+541	-0.2263	['@realDonaldTrump']	en	United Kingdom		
+542	0.3818	['@RealClearNews']	en	United States		
+543	-0.1779	['@FoxNews', '@foxnewspolitics', '@TRUMP', '@HillaryClinton']	en	United States	Multnomah County	OR
+544	-0.5859	['@realDonaldTrump', '@seanhannity', '@DiamondandSilk']	en	United States	Allegheny County	PA
+545	0.0772	['@realDonaldTrump']	en	United States		
+546	0.0	['@HillaryClinton']	en	United States	Maricopa County	AZ
+547	0.0	['@cnnbrk', '@MSNBC', '@andersoncooper', '@AC360', '@VanJones68']	und	United States	San Diego County	CA
+548	0.0		ne	United States	Washtenaw County	MI
+549	0.0	['@realDonaldTrump']	und	United States	Dallas County	TX
+550	-0.25	['@realDonaldTrump']	en	United States	Greene County	AR
+551	0.0		und	United States		
+552	0.0	['@Morning_Joe']	und	United States	Butler County	OH
+553	-0.872	['@HillaryClinton']	es	United States	Fairfax County	VA
+554	0.0	['@realDonaldTrump']	en	United States	Oklahoma County	OK
+555	0.4588	['@USArmy', '@realDonaldTrump', '@IvankaTrump']	en	United States	Fairfield County	CT
+556	0.3818	['@martyalpert']	en	United States	Baltimore city	MD
+557	0.0	['@realDonaldTrump']	en	United States	Middlesex County	MA
+558	0.0	['@MergatroidFilms', '@realDonaldTrump']	en	United States	Shelby County	TN
+559	0.0	['@realDonaldTrump']	en	United States	Oneida County	NY
+560	0.4019		en	United States	Chesterfield County	VA
+561	0.0	['@realDonaldTrump', '@seanhannity', '@JudgeJeanine', '@IvankaTrump', '@EricTrump', '@DonaldJTrumpJr', '@newtgingrich', '@PaulManafort']	und	United States	San Diego County	CA
+562	-0.7964	['@realDonaldTrump']	en	United States		
+563	-0.1531	['@realDonaldTrump']	en	United States	Jackson County	OR
+564	0.0		ne	United States	Washtenaw County	MI
+565	-0.5574	['@realDonaldTrump']	en	United Kingdom		
+566	-0.4019		en	United States	Leon County	FL
+567	-0.7269	['@realDonaldTrump']	en	United States		
+568	0.296		und	United States	Watauga County	NC
+569	0.1531		en	United States	New York County	NY
+570	0.7845	['@foxandfriends', '@HillaryClinton']	en	United States	Story County	IA
+571	0.0	['@realDonaldTrump']	en	Spain		
+572	0.7964	['@JustinColeMoore', '@foxandfriends', '@realDonaldTrump']	en	United States	Cannon County	TN
+573	0.0	['@realDonaldTrump']	en	United States	Denver County	CO
+574	0.0	['@shuff1138', '@kupajo322', '@realDonaldTrump', '@EnemyWithinn', '@elsolarverde', '@nytimes', '@HillaryClinton']	en	Australia		
+575	0.7351	['@realDonaldTrump']	en	United States	Polk County	MO
+576	0.0	['@realDonaldTrump']	und	United States	Orangeburg County	SC
+577	-0.5994		en	United States	New York County	NY
+578	0.0	['@realDonaldTrump', '@seanhannity', '@JudgeJeanine']	en	United States	Allegheny County	PA
+579	0.0		en	United States	Erie County	NY
+580	-0.34	['@realDonaldTrump']	en	Ireland		
+581	0.3818	['@realDonaldTrump']	en	United Kingdom		
+582	0.0		nl	Nederland		
+583	-0.5574	['@realDonaldTrump']	en	United States	Guilford County	NC
+584	0.3612	['@realDonaldTrump']	en	United States	Monongalia County	WV
+585	0.0		und	United States	Sacramento County	CA
+586	0.0	['@cnnbrk', '@MSNBC', '@andersoncooper', '@AC360', '@VanJones68']	und	United States	San Diego County	CA
+587	0.8519	['@magnifier661', '@SallyAu81783497', '@HillaryClinton']	en	United States		
+588	0.5267	['@realDonaldTrump', '@BamaStinson', '@elsolarverde']	en	United States		
+589	0.0	['@realDonaldTrump']	en	United States	Dallas County	TX
+590	-0.4215		en	United States	Chatham County	GA
+591	-0.4767	['@realDonaldTrump', '@EnemyWithinn', '@elsolarverde', '@nytimes']	en	United States		
+592	0.0	['@realDonaldTrump']	en	United States	Forsyth County	NC
+593	0.0201	['@realDonaldTrump']	en	United States	Polk County	MO
+594	0.0	['@realDonaldTrump']	und	United States	Jackson County	MO
+595	-0.2682	['@Momof2inDE', '@realDonaldTrump']	en	United States	Richmond city	VA
+596	0.7783	['@MrEdTrain', '@comermd', '@realDonaldTrump']	en	United States	Hampshire County	MA
+597	-0.6597	['@HillaryClinton', '@BarackObama']	en	United States	Autauga County	AL
+598	0.0	['@realDonaldTrump', '@seanhannity', '@JudgeJeanine', '@IvankaTrump', '@EricTrump', '@DonaldJTrumpJr', '@newtgingrich', '@PaulManafort']	und	United States	San Diego County	CA
+599	-0.7003	['@realDonaldTrump']	en	United States	Orange County	FL
+600	0.0772	['@realDonaldTrump', '@NewDay', '@ChrisCuomo']	en	United States		
+601	0.3182	['@realDonaldTrump']	en	United States	Guilford County	NC
+602	0.0	['@realDonaldTrump']	en	United States	Wayne County	MI
+603	0.4215	['@realDonaldTrump']	en	United States		
+604	0.0	['@TIME']	es	Chile		
+605	-0.4939	['@PizzaPartyBen']	en	United States	Will County	IL
+606	0.0	['@realDonaldTrump']	en	United States		
+607	0.5859	['@realDonaldTrump']	en	United States	Middlesex County	MA
+608	0.5719	['@realdonaldtrump']	en	United States	New York County	NY
+609	0.0	['@realDonaldTrump', '@exxonmobil']	en	United States	Polk County	MO
+610	-0.4588	['@shuff1138', '@kupajo322', '@realDonaldTrump', '@EnemyWithinn', '@elsolarverde', '@nytimes', '@HillaryClinton']	en	Australia		
+611	0.6369	['@HillaryClinton']	en	United States	Story County	IA
+612	-0.6908	['@realDonaldTrump']	en	United States	Honolulu County	HI
+613	0.0	['@cspanwj', '@HillaryClinton']	en	United States	Maricopa County	AZ
+614	0.743	['@realDonaldTrump']	en	United States	Orange County	FL
+615	-0.8271	['@realDonaldTrump']	en	United States		
+616	-0.0516	['@TheFive', '@HillaryClinton', '@TheDemocrats']	en	United States		
+617	0.7003	['@realDonaldTrump', '@DiamondandSilk', '@seanhannity']	en	United States	Allegheny County	PA
+618	0.4588	['@realDonaldTrump', '@ChrisCuomo']	en	United States	Middlesex County	MA
+619	-0.2263	['@realDonaldTrump']	en	United States	Arlington County	VA
+620	0.0	['@realDonaldTrump']	en	United States	Dallas County	TX
+621	-0.5859	['@realDonaldTrump']	en	United Kingdom		
+622	-0.6705	['@realDonaldTrump']	en	United Kingdom		
+623	0.7351	['@shuff1138', '@kupajo322', '@realDonaldTrump', '@EnemyWithinn', '@elsolarverde']	en	Australia		
+624	0.4588		en	United States	New York County	NY
+625	-0.0258	['@realDonaldTrump']	en	United States	Fairfax County	VA
+626	0.6369	['@realDonaldTrump']	en	Pakistan		
+627	-0.2263		en	United States	Wake County	NC
+628	-0.5719	['@realdonaldtrump', '@hillaryclinton']	en	United States	Philadelphia County	PA
+629	-0.0382	['@HillaryClinton']	en	United States	Story County	IA
+630	0.4019		en	United States	New York County	NY
+631	0.7783	['@HillaryClinton']	en	Madagascar		
+632	0.7906	['@MitchMccock', '@realDonaldTrump']	en	United States	Brevard County	FL
+633	-0.5574	['@realDonaldTrump']	en	United States	Denver County	CO
+634	0.0	['@realDonaldTrump', '@seanhannity', '@JudgeJeanine', '@IvankaTrump', '@EricTrump', '@DonaldJTrumpJr', '@newtgingrich', '@PaulManafort']	und	United States	San Diego County	CA
+635	-0.5994	['@realDonaldTrump']	en	United States		
+636	-0.8822	['@realDonaldTrump']	en	United States	Johnson County	KS
+637	0.0	['@LoordyMarie']	en	United States	Baltimore city	MD
+638	-0.5423	['@realDonaldTrump']	en	United States		
+639	0.2732	['@LoraInAlberta', '@realDonaldTrump', '@oreillyfactor']	en	Canada		
+640	0.6808	['@BayouProud', '@CNNPolitics']	en	United States	Rankin County	MS
+641	-0.2732	['@realDonaldTrump']	en	United States	New York County	NY
+642	0.0		en	United States	Chatham County	GA
+643	-0.2263	['@SenSanders', '@realDonaldTrump']	en	United States	Cook County	IL
+644	-0.4019	['@nycjim', '@realDonaldTrump']	en	United States	Ingham County	MI
+645	0.6478	['@foxandfriends', '@HillaryClinton']	en	United States	Story County	IA
+646	-0.9313	['@HillaryClinton']	en	United States		
+647	-0.34	['@realDonaldTrump']	en	United States	Muscogee County	GA
+648	0.3182	['@realDonaldTrump']	en	United States		
+649	-0.4404	['@realDonaldTrump', '@maddow']	en	United States		
+650	0.0	['@realDonaldTrump']	en	United States		
+651	0.0	['@realDonaldTrump']	und	United States	Pickaway County	OH
+652	-0.4404	['@Morning_Joe', '@realDonaldTrump']	en	United States	New York County	NY
+653	0.0		in	Singapur		
+654	0.8402	['@realDonaldTrump', '@laurencristmann', '@C_Lynne_Ryan', '@realDonaldTrump']	en	United States	Allegheny County	PA
+655	-0.1027		en	United States		
+656	0.5994	['@HillaryClinton']	en	Madagascar		
+657	-0.3804	['@realDonaldTrump']	en	United States	Charlotte County	FL
+658	-0.7783	['@realDonaldTrump']	en	United States	Nassau County	NY
+659	-0.1027	['@realDonaldTrump']	en	United States	Chester County	PA
+660	0.0	['@DanielleMorrill', '@realDonaldTrump']	en	United States	New York County	NY
+661	-0.4404	['@raindogtweets', '@cather435', '@JoeNBC']	en	United States	Baltimore city	MD
+662	0.4019	['@realDonaldTrump']	en	United States	Travis County	TX
+663	-0.4588	['@realDonaldTrump']	en	United States	Monongalia County	WV
+664	-0.5423	['@oooobear']	en	United States	Will County	IL
+665	0.2023	['@seanhannity', '@HillaryClinton']	en	United States		
+666	-0.34		en	United States	Camden County	NJ
+667	0.5719	['@nytopinion', '@TRUMP', '@HillaryClinton']	en	United States	Multnomah County	OR
+668	0.0	['@realDonaldTrump']	en	United States	Orange County	NY
+669	0.0	['@realDonaldTrump']	und	United States	Marathon County	WI
+670	0.6808	['@realDonaldTrump']	en	United States	Story County	IA
+671	0.0	['@TeaPartyOrg']	en	United States	Tarrant County	TX
+672	0.0	['@larry_kleinfeld', '@realDonaldTrump', '@EnemyWithinn', '@elsolarverde', '@nytimes']	en	United States	Montrose County	CO
+673	0.0	['@realDonaldTrump', '@sherrysamples', '@SheriffClarke']	und	United States		
+674	0.0	['@trumpaboard', '@realDonaldTrump', '@ClintonFdn']	und	United States	Madison County	NY
+675	0.4445		en	United States	Miami-Dade County	FL
+676	0.0	['@realDonaldTrump']	en	United States	Kalamazoo County	MI
+677	-0.8434	['@realDonaldTrump', '@ChrisCuomo']	en	United States	Middlesex County	MA
+678	-0.5423	['@RandPaul']	en	United States	Pinellas County	FL
+679	0.0	['@realDonaldTrump', '@EnemyWithinn', '@elsolarverde', '@nytimes']	und	United States	Winchester city	VA
+680	0.0	['@HillaryClinton']	und	United States		
+681	0.0		en	United States	King County	WA
+682	-0.2263	['@realDonaldTrump']	en	United States	Marion County	IN
+683	0.0	['@realDonaldTrump']	en	United Kingdom		
+684	0.0	['@realDonaldTrump']	und	United States	Liberty County	GA
+685	-0.6597	['@realDonaldTrump']	en	United Kingdom		
+686	-0.6597	['@realDonaldTrump']	en	United States	Orange County	FL
+687	0.4404	['@realDonaldTrump']	en	United States	Madison County	NY
+688	-0.128	['@HillaryClinton', '@POTUS']	en	United States	Nassau County	NY
+689	-0.1531	['@realDonaldTrump']	en	United States	Miami-Dade County	FL
+690	0.0772	['@ChrisCuomo', '@RudolphGiuliani', '@MichaelCohen212', '@realDonaldTrump', '@NewDay']	en	United States	Plymouth County	MA
+691	-0.2263	['@realDonaldTrump']	en	United States	Newport County	RI
+692	0.4939	['@realDonaldTrump']	en	United States	Broward County	FL
+693	0.6249	['@realDonaldTrump']	en	Italia		
+694	0.0	['@realDonaldTrump']	en	United States	Mercer County	NJ
+695	-0.5106	['@CarolCNN', '@HillaryClinton', '@realDonaldTrump']	en	United States	Montgomery County	TX
+696	0.4168	['@realDonaldTrump']	en	United States		
+697	0.3182	['@realDonaldTrump']	en	United States	Dallas County	TX
+698	0.2824	['@JudgeJeanine']	en	United States	Clark County	NV
+699	0.4404	['@JustinColeMoore', '@realDonaldTrump', '@foxandfriends']	en	United States	Cannon County	TN
+700	0.0	['@realDonaldTrump']	und	United States	Winchester city	VA
+701	-0.3818	['@realDonaldTrump']	en	United States	Erie County	NY
+702	-0.2263	['@hlthiskrieger', '@realDonaldTrump']	en	United States	Newport County	RI
+703	0.0	['@realDonaldTrump']	en	United States		
+704	-0.2732	['@realDonaldTrump']	en	New Zealand		
+705	-0.8442	['@realDonaldTrump']	en	United States	Los Angeles County	CA
+706	-0.0516		en	United States	Fairfield County	CT
+707	-0.6369	['@realDonaldTrump']	en	United States	Worcester County	MA
+708	0.25	['@HillaryClinton']	en	Pakistan		
+709	0.7184	['@realDonaldTrump']	en	United States	Charlotte County	FL
+710	0.4767	['@foxnews', '@HillaryClinton']	en	United States	Morris County	NJ
+711	0.7096	['@realDonaldTrump', '@hillaryclinton']	en	United States	Palm Beach County	FL
+712	0.0	['@HillaryClinton']	en	United States		
+713	0.0	['@realDonaldTrump']	en	United States	Autauga County	AL
+714	0.2732	['@realDonaldTrump']	en	United States	Brazoria County	TX
+715	0.0	['@ChrisCuomo', '@realDonaldTrump']	en	United States	Middlesex County	MA
+716	0.2732	['@Morning_Joe', '@realDonaldTrump']	en	United States	New York County	NY
+717	0.0	['@TheBillyWest', '@abcnews', '@realDonaldTrump', '@bryanpHury']	und	United States	Cook County	IL
+718	0.1027	['@BrianBickhaus', '@CNNPolitics', '@realDonaldTrump', '@hughhewitt']	en	United States	Rankin County	MS
+719	0.5574		en	United Kingdom		
+720	0.0	['@Dollfinish', '@realDonaldTrump', '@EnemyWithinn', '@elsolarverde', '@nytimes']	en	United States		
+721	0.4215	['@realDonaldTrump']	en	United States	Cook County	IL
+722	-0.5859	['@PrisonPlanet', '@Milos51611', '@realDonaldTrump']	en	United States		
+723	-0.1027		en	United States		
+724	-0.836	['@TarotDarrow', '@realDonaldTrump']	en	United States	Calhoun County	MI
+725	0.0		en	United States	Wake County	NC
+726	-0.1877	['@realDonaldTrump']	en	United States	Sangamon County	IL
+727	-0.4588	['@HillaryClinton', '@HillaryClinton']	en	United States	Story County	IA
+728	0.0	['@realDonaldTrump']	en	United States	Lake County	FL
+729	0.25		en	United States	Liberty County	GA
+730	-0.5423	['@realDonaldTrump']	en	United States	Madison County	NY
+731	0.0		en	United States		
+732	-0.7579	['@realDonaldTrump']	en	Estados Unidos		
+733	0.34	['@CNNPolitics']	en	United States	Baltimore County	MD
+734	0.4404		en	United States	Collier County	FL
+735	0.0772	['@JohnJHarwood', '@hughhewitt', '@realDonaldTrump']	en	United States	Orangeburg County	SC
+736	0.25	['@HillaryClinton', '@TeamUSA']	en	Madagascar		
+737	0.0		en	United States	District of Columbia	DC
+738	0.0772	['@realDonaldTrump']	en	United States	Orange County	FL
+739	-0.7886	['@realDonaldTrump']	en	India		
+740	-0.2732	['@realDonaldTrump']	en	United States		
+741	0.25	['@realDonaldTrump', '@seanhannity', '@IngrahamAngle']	en	United States	Sarasota County	FL
+742	0.0	['@realDonaldTrump']	en	United States	Franklin County	OH
+743	0.0		en	United States		
+744	0.0516		en	United States	Pinellas County	FL
+745	-0.5719	['@realDonaldTrump']	en	United States		
+746	0.0	['@realDonaldTrump']	en	United States	Allegheny County	PA
+747	0.0258		en	United States	Henderson County	NC
+748	0.3612	['@realDonaldTrump']	en	United States	Palm Beach County	FL
+749	-0.0516	['@realDonaldTrump']	en	United States	Orangeburg County	SC
+750	0.0516		en	United States		
+751	0.296	['@realDonaldTrump', '@angrysocialst']	en	Australia		
+752	-0.3182	['@realDonaldTrump']	en	United States		
+753	-0.4939		en	United States	Miami-Dade County	FL
+754	0.1027	['@HillaryClinton']	en	United States	Suffolk County	NY
+755	0.0		en	United States		
+756	-0.4588		en	United States	Collin County	TX
+757	-0.8689	['@HillaryClinton']	en	United States	Miami-Dade County	FL
+758	-0.34	['@JustinColeMoore']	en	United States	Cannon County	TN
+759	0.0		en	United States		
+760	-0.9022	['@realDonaldTrump']	en	United States	Allegheny County	PA
+761	0.0	['@realDonaldTrump']	en	United States	Union County	NJ
+762	-0.5574		en	United States	Will County	IL
+763	-0.5106	['@HillaryClinton']	pt	United States	Suffolk County	NY
+764	-0.2023		en	United States	Baltimore County	MD
+765	0.5267		en	United States	Wake County	NC
+766	-0.5267	['@rivellij', '@Morning_Joe']	en	United States	Baltimore city	MD
+767	0.3612	['@realDonaldTrump']	en	United States	Miami-Dade County	FL
+768	0.5106	['@Chad_59', '@realDonaldTrump']	en	United States	Franklin County	OH
+769	0.0		en	United States		
+770	0.7906	['@realDonaldTrump']	en	United States	Cook County	IL
+771	-0.2263	['@realDonaldTrump']	en	Canada		
+772	0.0	['@realDonaldTrump']	en	United States		
+773	0.0	['@realDonaldTrump', '@EnemyWithinn', '@elsolarverde', '@nytimes']	en	United States	Mobile County	AL
+774	0.0	['@realDonaldTrump', '@youngstownstate']	en	United States	Fairfield County	OH
+775	0.0	['@AnonymousHeadUS', '@DrJillStein', '@DrJillStein']	en	Nederland		
+776	0.9042	['@foxandfriends', '@JustinColeMoore', '@realDonaldTrump']	en	United States		
+777	-0.5574	['@realDonaldTrump']	en	United States	Allegheny County	PA
+778	0.0		und	United States	Jefferson County	KY
+779	-0.4939	['@ron_fournier', '@realDonaldTrump']	en	United States	Johnson County	KS
+780	-0.296	['@realDonaldTrump']	en	United States	St. Louis County	MO
+781	0.0		en	United States		
+782	0.296	['@HillaryClinton']	en	United States	Suffolk County	NY
+783	0.0	['@pagesix']	en	United States	Madison County	NY
+784	-0.7783	['@realDonaldTrump']	en	United States	Boyle County	KY
+785	0.0	['@NeilTurner_', '@realDonaldTrump']	en	United Kingdom		
+786	0.4588	['@JimmyNasium', '@martyalpert']	en	United States	Baltimore city	MD
+787	-0.5859	['@HillaryClinton']	en	United States	Nassau County	NY
+788	0.0		en	United States		
+789	0.0	['@realDonaldTrump']	en	United States	Charlotte County	FL
+790	0.0	['@DailyCaller', '@foxnewspolitics', '@HillaryClinton']	und	United States		
+791	0.0	['@jpodhoretz', '@realDonaldTrump']	en	United States	Worcester County	MA
+792	-0.34	['@telegraphnews']	en	United States	Los Angeles County	CA
+793	0.4939	['@bets65', '@MSNBC', '@FoxNews', '@CassandraRules']	en	United States	Will County	IL
+794	0.0	['@WhiteGenocideT1', '@realDonaldTrump']	und	United Kingdom		
+795	0.0	['@HillaryClinton']	en	United States	Cannon County	TN
+796	0.4404	['@realDonaldTrump']	en	Nederland		
+797	-0.7906	['@realDonaldTrump']	en	United States	Allegheny County	PA
+798	0.8316	['@realDonaldTrump']	en	United States	Davidson County	TN
+799	0.0	['@realDonaldTrump']	en	United States		
+800	-0.5423	['@sethmoulton', '@realDonaldTrump']	en	United States	New York County	NY
+801	0.0		en	United States	Bernalillo County	NM
+802	0.0258	['@realDonaldTrump']	en	India		
+803	0.0	['@bhodisvaha', '@Morning_Joe', '@randyprine']	en	United States	Baltimore city	MD
+804	0.2023	['@realDonaldTrump']	en	United States	Suffolk County	MA
+805	-0.6597	['@hughhewitt', '@readDonaldTrump', '@HillaryClinton', '@PeterWSJ']	en	United States	Lorain County	OH
+806	-0.5574		en	United States	Miami-Dade County	FL
+807	-0.128	['@HillaryClinton']	fr	Canada		
+808	0.7964	['@HillaryClinton']	en	United States	Dallas County	TX
+809	0.0	['@WhiteGenocideT1', '@realDonaldTrump', '@ClintonFdn']	und	United States	Madison County	NY
+810	0.2023	['@realDonaldTrump']	en	United States	Suffolk County	MA
+811	0.0		en	United States		
+812	-0.4215		en	United States		
+813	0.34	['@HillaryClinton']	en	United States	Story County	IA
+814	0.2023	['@realDonaldTrump']	en	United States		
+815	-0.6369		en	United States	DuPage County	IL
+816	0.0		und	United Kingdom		
+817	0.0	['@realDonaldTrump']	en	United States	Pinellas County	FL
+818	0.4019	['@realDonaldTrump']	en	United Kingdom		
+819	0.0	['@CarlIcahn1', '@realDonaldTrump']	en	United States	Palm Beach County	FL
+820	0.0	['@cspanwj', '@HillaryClinton']	en	United States	Rockland County	NY
+821	-0.4023	['@LiberalMmama', '@realDonaldTrump']	en	United States	Allegheny County	PA
+822	-0.7783		en	United States	Orangeburg County	SC
+823	0.0	['@realDonaldTrump']	en	United States	Allegheny County	PA
+824	-0.2411	['@realDonaldTrump', '@elsolarverde']	en	United States	St. Lucie County	FL
+825	0.0		en	United States		
+826	0.0	['@donnawnts2no', '@AndriaPledger', '@trumpUni', '@realDonaldTrump']	en	United States	Pinellas County	FL
+827	-0.8316	['@realDonaldTrump']	en	United States		
+828	0.0	['@cspanwj', '@HillaryClinton']	es	United States	Rockland County	NY
+829	0.0		und	United States	Wake County	NC
+830	-0.7783	['@realDonaldTrump']	en	United States	Miami-Dade County	FL
+831	-0.7783	['@realDonaldTrump']	en	United States	Nueces County	TX
+832	-0.1451	['@realDonaldTrump']	en	United States	Johnson County	KS
+833	0.0	['@Jeff_Neil525', '@realDonaldTrump', '@ClintonFdn']	und	United States	Madison County	NY
+834	0.2263	['@realDonaldTrump']	en	United States	Baltimore County	MD
+835	0.0	['@whpresscorps']	en	United States		
+836	0.5574	['@realDonaldTrump']	en	United States		
+837	-0.8481	['@realDonaldTrump', '@EnemyWithinn', '@elsolarverde', '@nytimes']	en	United States	Autauga County	AL
+838	-0.6124	['@realDonaldTrump']	en	United States	Allegheny County	PA
+839	0.5106	['@realDonaldTrump']	en	United States	Madison County	NY
+840	-0.4215	['@wikileaks', '@HillaryClinton']	en	United Kingdom		
+841	0.4019	['@TB_Times', '@adamsmithtimes']	en	United States	Hillsborough County	FL
+842	0.7096	['@Usmc_getsome35', '@NewDay', '@realDonaldTrump']	en	United States	New York County	NY
+843	0.0		en	Australia		
+844	-0.8126	['@realDonaldTrump']	en	United States	Tuscola County	MI
+845	-0.7964	['@realDonaldTrump']	en	United States	Allegheny County	PA
+846	0.0		en	United States		
+847	0.0	['@WakeUpMFers', '@PhyllisHart16', '@realDonaldTrump']	en	United States		
+848	0.4404	['@ChrisCuomo', '@realDonaldTrump']	en	United States	Middlesex County	MA
+849	0.0	['@Republiicunts', '@realDonaldTrump', '@HillaryClinton']	en	United States	Franklin County	OH
+850	-0.8519	['@realDonaldTrump']	en	United States	Brazoria County	TX
+851	0.5574		en	United States	DuPage County	IL
+852	-0.5267	['@elizabethforma', '@mitchellreports', '@realDonaldTrump']	en	United States	Wake County	NC
+853	-0.6808	['@HillaryClinton']	en	United States		
+854	-0.1027	['@realDonaldTrump']	en	United States	Lehigh County	PA
+855	0.0		en	United States		
+856	-0.743	['@realDonaldTrump', '@marty713', '@SheriffClarke']	en	United States		
+857	-0.5106	['@joekarce', '@ChrisCuomo']	en	United States	Baltimore city	MD
+858	0.6124	['@realDonaldTrump', '@laurencristmann', '@C_Lynne_Ryan']	en	United States	Allegheny County	PA
+859	0.5859		und	United States	Kauai County	HI
+860	0.0		und	United States	El Paso County	CO
+861	0.296	['@realDonaldTrump']	en	United States	Gwinnett County	GA
+862	-0.5106	['@Iacoguy', '@ZaibatsuNews', '@realDonaldTrump']	en	United States	Palm Beach County	FL
+863	-0.4215	['@SpeakerRyan', '@realDonaldTrump']	en	United States	Liberty County	GA
+864	-0.0772		en	United States	Will County	IL
+865	-0.25	['@RoshieWeightman', '@AlbionAwakes', '@HillaryClinton']	en	United Kingdom		
+866	-0.4404	['@realDonaldTrump']	en	United States	Allegheny County	PA
+867	0.0	['@deanhepburn', '@Valen_of_Minbar', '@realDonaldTrump']	en	Australia		
+868	0.0	['@doglover100', '@realDonaldTrump']	en	United Kingdom		
+869	-0.34	['@AASchapiro', '@AgeJustNumbers', '@realDonaldTrump', '@HillaryClinton', '@POTUS']	en	United States	New York County	NY
+870	0.0	['@realDonaldTrump']	en	Canada		
+871	0.0		und	United States	Deschutes County	OR
+872	-0.1761	['@realDonaldTrump']	en	United States		
+873	-0.3523		en	United States	Baltimore city	MD
+874	-0.5267	['@jpodhoretz', '@realDonaldTrump', '@SebGorka']	en	United States		
+875	-0.3612	['@HillaryClinton', '@realDonaldTrump']	en	United States	Richmond County	NY
+876	0.0		in	United States	Allegheny County	PA
+877	0.0	['@deray', '@realDonaldTrump']	en	United States	Kalamazoo County	MI
+878	0.6369	['@realDonaldTrump']	en	United States	Allegheny County	PA
+879	0.0	['@realDonaldTrump']	und	United States	San Bernardino County	CA
+880	0.4019	['@madeUlookhuh', '@bhodisvaha', '@Morning_Joe']	en	United States	Baltimore city	MD
+881	0.5267	['@realDonaldTrump', '@TheDonaldNews']	en	United States	Allegheny County	PA
+882	0.0	['@cspanwj', '@HillaryClinton']	en	United States	Maricopa County	AZ
+883	0.296	['@HillaryClinton']	en	United States	Richmond County	NY
+884	0.2263	['@SenJohnMcCain', '@realDonaldTrump']	en	United States	New York County	NY
+885	0.5994	['@realDonaldTrump']	en	United States	Greenville County	SC
+886	0.0	['@realDonaldTrump']	en	United States	Johnson County	KS
+887	-0.5267	['@realDonaldTrump']	en	United States	Nassau County	NY
+888	0.4404	['@realDonaldTrump']	en	United Kingdom		
+889	-0.4215		en	United States		
+890	-0.128	['@realDonaldTrump', '@Don_Vito_08']	en	United States	Orange County	FL
+891	-0.4019		en	United States	Will County	IL
+892	-0.8074	['@realDonaldTrump', '@EnemyWithinn', '@elsolarverde', '@nytimes']	en	United States	Allegheny County	PA
+893	0.0772	['@realDonaldTrump']	en	United States	Orangeburg County	SC
+894	-0.8059	['@realDonaldTrump']	en	United States	New York County	NY
+895	0.0	['@realDonaldTrump']	en	United Kingdom		
+896	0.1779	['@HearUsNowUSA1', '@realDonaldTrump']	en	United States		
+897	0.2263	['@HillaryClinton', '@realDonaldTrump']	en	United States	Nassau County	NY
+898	0.4717	['@realDonaldTrump']	en	United States	Allegheny County	PA
+899	0.0	['@realDonaldTrump']	en	United States	Jefferson County	KY
+900	0.0	['@realDonaldTrump']	en	United States		
+901	0.0	['@Don_Vito_08', '@CASE103060', '@realDonaldTrump', '@EnemyWithinn', '@elsolarverde', '@nytimes']	en	United States		
+902	0.0	['@seanhannity', '@IngrahamAngle', '@HillaryClinton', '@ClintonFdn']	und	United States	Madison County	NY
+903	0.0		en	United States	New York County	NY
+904	-0.25	['@realDonaldTrump', '@LouDobbs', '@JoeNBC', '@KatyTurNBC']	en	United States	Nassau County	NY
+905	0.0	['@andreajmarkley', '@realDonaldTrump']	en	United States	Muscogee County	GA
+906	0.0	['@japster2008', '@realDonaldTrump']	en	United States	New York County	NY
+907	0.0	['@HillaryClinton', '@Morning_Joe', '@davidaxelrod']	en	United States	Lee County	FL
+908	-0.3612	['@SheilaInCT', '@VintageArtCafe', '@realDonaldTrump']	en	United States	Johnson County	KS
+909	0.7269	['@realDonaldTrump']	en	United States	Orangeburg County	SC
+910	-0.7845	['@realDonaldTrump']	en	United States		
+911	0.0		und	United States		
+912	-0.6872	['@realDonaldTrump']	en	United States	Allegheny County	PA
+913	-0.6908	['@realDonaldTrump']	en	United States	Hamilton County	OH
+914	-0.5994	['@HillaryClinton']	en	United States	Marion County	OH
+915	-0.5994		en	United States	Baltimore County	MD
+916	-0.6369	['@realDonaldTrump', '@laurencristmann', '@C_Lynne_Ryan']	en	United States	Allegheny County	PA
+917	-0.5994	['@GodelieveTT', '@chgroenhuijsen', '@DrJillStein']	nl	Nederland		
+918	0.5574	['@realDonaldTrump', '@Morning_Joe']	en	United States	Butler County	PA
+919	0.7003	['@realDonaldTrump']	en	United States		
+920	0.0	['@realDonaldTrump']	en	United Kingdom		
+921	0.0	['@realDonaldTrump']	und	United States		
+922	-0.7506	['@trumansmama1', '@realDonaldTrump']	en	United States	St. Lucie County	FL
+923	0.4215	['@SheriffClarke', '@AlbionAwakes']	en	United States	Clark County	NV
+924	0.4404	['@JudgeJeanine', '@foxandfriends']	en	United States	Pinellas County	FL
+925	0.0	['@realDonaldTrump', '@laurencristmann', '@C_Lynne_Ryan']	en	United States	Allegheny County	PA
+926	-0.4404		en	New Zealand		
+927	-0.5719	['@realDonaldTrump']	en	United States	Kings County	NY
+928	0.0	['@realDonaldTrump', '@SheriffClarke', '@ForeignPolicy', '@ClintonFdn']	und	United States	Madison County	NY
+929	0.0	['@SoCal4Trump', '@HillaryClinton', '@BarackObama']	und	United States	Acadia Parish	LA
+930	0.1531	['@TinaMorphis', '@IndieHannaJones', '@realDonaldTrump']	en	United States	Calhoun County	MI
+931	0.7774	['@Morning_joe', '@realDonaldTrump']	en	United States	Queens County	NY
+932	0.4588	['@realDonaldTrump']	en	United States	Kings County	NY
+933	-0.4939	['@realDonaldTrump']	en	United States	Suffolk County	MA
+934	0.0	['@realDonaldTrump']	und	Portugal		
+935	0.5719	['@sethmoulton', '@HillaryClinton']	en	United States	Miami-Dade County	FL
+936	-0.0516	['@realDonaldTrump']	en	United States	Orangeburg County	SC
+937	0.0258	['@Artzthings', '@DianeToucan', '@realDonaldTrump']	en	United States		
+938	0.4023	['@ManMet80']	en	United States	Allegheny County	PA
+939	-0.8481		en	United States		
+940	0.0	['@MagicRoyalty', '@realDonaldTrump', '@ClintonFdn']	und	United States	Madison County	NY
+941	-0.1779	['@realDonaldTrump']	en	United States		
+942	0.0	['@HillaryClinton', '@POTUS', '@WhiteHouse', '@SenWarren', '@BernieSanders']	en	United States	New York County	NY
+943	0.4939	['@realDonaldTrump']	en	United States	Calhoun County	MI
+944	-0.4588	['@realDonaldTrump']	en	United States	Dallas County	TX
+945	-0.3182		en	United States		
+946	0.0	['@HillaryClinton', '@HillarysCrooked']	und	United States	Fairfield County	CT
+947	0.0	['@AmandiOnAir']	und	United States	Broward County	FL
+948	0.0	['@JohnKStahlUSA', '@SharpestJim', '@realDonaldTrump']	en	United States		
+949	0.0	['@POTUS', '@realDonaldTrump', '@washingtonpost', '@JeffBezos', '@amazon', '@nypost', '@FoxNews', '@nytimes', '@latimes']	en	United States	Bexar County	TX
+950	-0.0258		en	Nigeria		
+951	-0.4588		en	United States		
+952	0.5994	['@RealDonaldTrump']	en	Australia		
+953	0.5859	['@realDonaldTrump']	en	United States	Monroe County	NY
+954	0.0	['@realDonaldTrump']	en	United States		
+955	0.0	['@HillaryClinton', '@POTUS']	en	United States	Mecklenburg County	NC
+956	-0.4817	['@realDonaldTrump']	en	United States		
+957	0.0772		en	New Zealand		
+958	0.0	['@realDonaldTrump']	en	United States	Fulton County	GA
+959	0.0		fr	Canada		
+960	0.2732	['@realDonaldTrump']	en	United States	Beaver County	PA
+961	0.0	['@WhiteGenocideT1', '@realDonaldTrump', '@ClintonFdn']	und	United States	Madison County	NY
+962	-0.6124	['@realDonaldTrump']	en	United States	Allegheny County	PA
+963	0.0258	['@HillaryClinton']	en	United States	Nassau County	NY
+964	0.0	['@jimmycleanhands', '@realDonaldTrump']	en	United States	New York County	NY
+965	0.0	['@HillaryClinton']	en	United States	Fairfield County	CT
+966	-0.5106	['@realDonaldTrump']	en	United States	Orangeburg County	SC
+967	-0.1531	['@realDonaldTrump']	en	United States	Philadelphia County	PA
+968	0.4168	['@realDonaldTrump']	en	United States	Harris County	TX
+969	-0.9118	['@realDonaldTrump', '@laurencristmann', '@C_Lynne_Ryan']	en	United States	Lee County	FL
+970	0.0		in	Singapur		
+971	-0.5106	['@realDonaldTrump']	en	United States	Madison County	NY
+972	-0.4215		en	United States		
+973	0.128	['@HillaryClinton', '@realDonaldTrump', '@JebBush', '@MittRomney']	en	United States	Rock Island County	IL
+974	0.0258	['@realDonaldTrump']	en	United States	Jefferson County	CO
+975	0.0	['@realDonaldTrump']	en	United States	Cumberland County	ME
+976	0.8807	['@DanScavino', '@TeamTrump', '@realDonaldTrump', '@SheriffClarke']	en	New Zealand		
+977	0.0		en	United States	Baltimore County	MD
+978	-0.6983	['@realDonaldTrump', '@elsolarverde']	en	United States	Allegheny County	PA
+979	0.0	['@realDonaldTrump']	en	United States	Miami-Dade County	FL
+980	0.0		eu	Bosnia and Herzegovina		
+981	0.0	['@MusaTuray4', '@AC360', '@randikayeCNN', '@HillaryClinton', '@ClintonFdn']	en	United States		
+982	0.0	['@realDonaldTrump']	en	United States	Fulton County	GA
+983	0.2732	['@realDonaldTrump']	en	United States	New York County	NY
+984	0.1531	['@HillaryClinton']	en	United States	Orangeburg County	SC
+985	-0.5267	['@PoliticalShort', '@sarahcwestwood']	en	United States	Will County	IL
+986	0.0	['@BarackObama', '@HillaryClinton']	en	United Arab Emirates		
+987	-0.2263	['@sethmoulton', '@HillaryClinton', '@ChrisCuomo']	en	United States	Burlington County	NJ
+988	-0.4939	['@realDonaldTrump']	en	United States	Suffolk County	MA
+989	-0.6597	['@realDonaldTrump']	en	United States	Plymouth County	MA
+990	-0.128	['@realDonaldTrump']	en	United States	Fredericksburg city	VA
+991	-0.2263	['@realDonaldTrump', '@morningmika', '@JoeNBC']	en	United States	Ocean County	NJ
+992	-0.2732	['@realdonaldtrump']	en	United States	Norfolk County	MA
+993	0.0	['@realDonaldTrump', '@KatrinaPierson', '@SheriffClarke']	und	United States	Dallas County	TX
+994	0.1027	['@realDonaldTrump']	en	United States		
+995	0.0	['@realDonaldTrump', '@exxonmobil', '@BASF']	en	United States	Polk County	MO
+996	-0.6486	['@BarackObama', '@HillaryClinton']	en	United States	Hartford County	CT
+997	-0.357	['@realDonaldTrump', '@LouDobbs', '@JoeNBC', '@KatyTurNBC', '@TrishIntel']	en	United States	Nassau County	NY
+998	0.0		en	United States	Henderson County	NC
+999	-0.34	['@realDonaldTrump', '@EnemyWithinn', '@elsolarverde', '@nytimes']	en	United States	Butler County	PA
