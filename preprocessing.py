@@ -53,7 +53,7 @@ tweets['text'] =    list(map(lambda tweet: tweet['text'], tweets_data))
 #tweets['country'] = list(map(lambda tweet: tweet['place']['country'] if tweet['place'] != None else None, tweets_data))
 
 #%%
-tweets['location'] = list(map(lambda tweet: tweet['place']['bounding_box'] if tweet['place']['bounding_box'] != None else None, tweets_data))
+#tweets['location'] = list(map(lambda tweet: tweet['place']['bounding_box'] if tweet['place']['bounding_box'] != None else None, tweets_data))
     # This is not working if I use the whole dataset...? 
 # See this website for more info on the metadata: https://developer.twitter.com/en/docs/tweets/data-dictionary/overview/geo-objects.html
 
@@ -153,7 +153,8 @@ lemma = WordNetLemmatizer()
 def clean(doc):
     stop_free = " ".join([i for i in doc.lower().split() if i not in stop])
     punc_free = ''.join(ch for ch in stop_free if ch not in exclude)
-    normalized = " ".join(lemma.lemmatize(word) for word in punc_free.split())
+    #normalized = " ".join(lemma.lemmatize(word) for word in punc_free.split())
+    normalized = " ".join(word for word in punc_free.split())
     return normalized
 
 #%%
@@ -168,9 +169,9 @@ tweets['text_clean'] = [clean(doc).split() for doc in tweets['text']] # Check df
 
 #%%
 
-from textblob import TextBlob # Textblob for sentiment analysis
+#from textblob import TextBlob # Textblob for sentiment analysis
 
-tweets['text_clean'] = tweets['text_clean'].apply(lambda tweet: ' '.join(tweet))
+#tweets['text_clean'] = tweets['text_clean'].apply(lambda tweet: ' '.join(tweet))
 tweets['blob_sentiment'] = tweets['text_clean'].apply(lambda text: TextBlob(text).sentiment.polarity)
 
 # Run two different sentiment analysis and correlate the outcomes..
@@ -182,6 +183,14 @@ import seaborn as sns
 
 senti= vader.SentimentIntensityAnalyzer()
 
+def vader_polarity(text):
+    """ Transform the output to a binary 0/1 result """
+    score = senti.polarity_scores(text)
+    return 1 if score['pos'] > score['neg'] else 0
+
+tweets['vader_sentiment'] = tweets['text_clean'].apply(lambda tweet: vader_polarity(tweet)['compound'])
+
+#%%
 tweets['vader_sentiment'] = tweets['text_clean'].apply(lambda tweet: senti.polarity_scores(tweet)['compound'])
 
 # Impliment SentiStrength (better for short texts) 
@@ -189,10 +198,119 @@ tweets['vader_sentiment'] = tweets['text_clean'].apply(lambda tweet: senti.polar
 
 #%%
 
-corrmatrix = tweets[['blob_sentiment', 'vader_sentiment']].corr()
-corrmatrix
+#tweets[['blob_sentiment', 'vader_sentiment']].corr(method='pearson') # 0.52
+tweets[['blob_sentiment', 'vader_sentiment']].corr(method='spearman') # 0.50
 
-sns.heatmap(corrmatrix) # Correlations below 0.6... 
+
+#sns.heatmap(corrmatrix) # Correlations below 0.6... 
+
+#%%
+
+# Append state onto dataframe
+
+df = pd.read_table('/Users/Daniel/Desktop/final_frame_full.txt', header=0)
+del df['Unnamed: 0'], df['handles'], df['sentiment'], df['country'], df['language'], df['county']
+
+tweets['state'] = df['state']
+
+del df
+
+#%%
+
+# Make subset with selected states for topic modelling
+
+NY = tweets[tweets.state == 'NY'] # New York: Its a solely democratic state that went for Hillary Clinton with a big margin
+TN = tweets[tweets.state == 'TN'] # Same as New York, but the other way around... 
+
+NY = pd.DataFrame(NY)
+TN = pd.DataFrame(TN)
+
+del AZ['link'], AZ['vader_sentiment'], AZ['blob_sentiment']
+del TN['link'], TN['vader_sentiment'], TN['blob_sentiment']
+
+#%%
+
+def clean(doc):
+    stop_free = " ".join([i for i in doc.lower().split() if i not in stop])
+    punc_free = ''.join(ch for ch in stop_free if ch not in exclude)
+    #normalized = " ".join(lemma.lemmatize(word) for word in punc_free.split())
+    normalized = " ".join(word for word in punc_free.split())
+    return normalized
+
+from nltk.corpus import stopwords
+from nltk.stem.wordnet import WordNetLemmatizer
+import string
+
+stop = set(stopwords.words('english'))
+
+# Create a set of punctuation words 
+exclude = set(string.punctuation) 
+
+# This is the function makeing the lemmatization
+lemma = WordNetLemmatizer()
+
+NY['text_clean'] = [clean(doc).split() for doc in NY['text']]
+TN['text_clean'] = [clean(doc).split() for doc in TN['text']]
+
+#%%
+
+
+# Find model fit for corpus
+
+from gensim import corpora, models
+
+texts_for_lda = NY['text_clean'] # Taking stopped part of corpus for LDA modelling
+
+texts = texts_for_lda
+id2word = corpora.Dictionary(texts)
+id2word.filter_extremes(no_below=10, no_above=0.2) # Remove words ocurring in less than 5 and more than 50% of docs
+
+mm = [id2word.doc2bow(text) for text in texts]
+tfidf = models.TfidfModel(mm) # Term frequency-inverse document frequency
+lda_NY = models.ldamodel.LdaModel(corpus = tfidf[mm], id2word = id2word, num_topics = 10, alpha = "auto")
+
+lda_NY.print_topics(num_words=10)[:5] # Check if it worked
+
+from gensim import corpora, models
+
+texts_for_lda = TN['text_clean'] # Taking stopped part of corpus for LDA modelling
+
+texts = texts_for_lda
+id2word = corpora.Dictionary(texts)
+id2word.filter_extremes(no_below=10, no_above=0.2) # Remove words ocurring in less than 5 and more than 50% of docs
+
+mm = [id2word.doc2bow(text) for text in texts]
+tfidf = models.TfidfModel(mm) # Term frequency-inverse document frequency
+lda_TN = models.ldamodel.LdaModel(corpus = tfidf[mm], id2word = id2word, num_topics = 10, alpha = "auto")
+
+lda_TN.print_topics(num_words=10)[:5] # Check if it worked
+
+
+
+#%%
+dictionary = corpora.Dictionary(doc_clean)
+doc_term_matrix = [dictionary.doc2bow(doc) for doc in doc_clean]
+# Creating the object for LDA model using gensim library
+Lda = gensim.models.ldamodel.LdaModel
+
+# Running and Trainign LDA model on the document term matrix.
+ldamodel = Lda(doc_term_matrix, num_topics=10, id2word = dictionary, passes=100)
+
+# Print 2 topics and describe then with 4 words.
+topics = ldamodel.print_topics(num_topics=10, num_words=10)
+
+i=0
+for topic in topics:
+    print ("Topic",i ,"->", topic)     
+    i+=1
+
+#%%
+# This is the clean corpus.
+    # This part is not working anymore: 'NoneType' object has no attribute 'lower'
+    # I think the problem occurs when I remove twitter handles and hyperlinks
+    # because this means that some cells are NA's, which returns an empty object
+
+tweets['text_clean'] = [clean(doc).split() for doc in tweets['text']
 
 #%%
 
