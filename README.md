@@ -5,6 +5,8 @@ This is the github repo for our first case study.
 The overall goal of this assignment will be to show differences in a selected group of battleground states and districts within those states
 
 - To do:
+  - Hisgram countries
+  - Histogram languages
   - Combine data into new dataframe (Martijn)
     - The following variables will be included
       - Index of tweet
