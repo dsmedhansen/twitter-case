@@ -31,9 +31,9 @@ for line in tweets_file:
         if i % 10000 == 0:      
             print ('\nWe have gathered:',len(tweets_data), 'tweets.\n')
             print('This is one of them:', tweet['text'])
-        #if i >= 10000: # Define size of subset
-            #del i, line, tweet, tweets_collection
-            #break
+        if i >= 1000: # Define size of subset
+            del i, line, tweet, tweets_collection
+            break
     except Exception as e:
         print (e)
         continue
@@ -49,13 +49,9 @@ tweets = pd.DataFrame()
 #%%
 
 tweets['text'] =    list(map(lambda tweet: tweet['text'], tweets_data))
+tweets['time'] =    list(map(lambda tweet: tweet['created_at'], tweets_data))
 #tweets['lang'] =    list(map(lambda tweet: tweet['lang'], tweets_data))
 #tweets['country'] = list(map(lambda tweet: tweet['place']['country'] if tweet['place'] != None else None, tweets_data))
-
-#%%
-#tweets['location'] = list(map(lambda tweet: tweet['place']['bounding_box'] if tweet['place']['bounding_box'] != None else None, tweets_data))
-    # This is not working if I use the whole dataset...? 
-# See this website for more info on the metadata: https://developer.twitter.com/en/docs/tweets/data-dictionary/overview/geo-objects.html
 
 #%%
 
@@ -79,6 +75,7 @@ def word_in_text(word, text): # Redundant?
 #%%
 
 tweets['link'] = tweets['text'].apply(lambda tweet: extract_link(tweet))
+
 print(tweets['link'])
 
 #%%
@@ -171,7 +168,7 @@ tweets['text_clean'] = [clean(doc).split() for doc in tweets['text']] # Check df
 
 #from textblob import TextBlob # Textblob for sentiment analysis
 
-#tweets['text_clean'] = tweets['text_clean'].apply(lambda tweet: ' '.join(tweet))
+tweets['text_clean'] = tweets['text_clean'].apply(lambda tweet: ' '.join(tweet))
 tweets['blob_sentiment'] = tweets['text_clean'].apply(lambda text: TextBlob(text).sentiment.polarity)
 
 # Run two different sentiment analysis and correlate the outcomes..
@@ -183,14 +180,16 @@ import seaborn as sns
 
 senti= vader.SentimentIntensityAnalyzer()
 
-def vader_polarity(text):
-    """ Transform the output to a binary 0/1 result """
-    score = senti.polarity_scores(text)
-    return 1 if score['pos'] > score['neg'] else 0
+#def vader_polarity(text):
+    #""" Transform the output to a binary 0/1 result """
+    #score = senti.polarity_scores(text)
+    #return 1 if score['pos'] > score['neg'] else 0
 
-tweets['vader_sentiment'] = tweets['text_clean'].apply(lambda tweet: vader_polarity(tweet)['compound'])
+#tweets['vader_sentiment'] = tweets['text_clean'].apply(lambda tweet: vader_polarity(tweet)['compound'])
 
 #%%
+
+tweets['text_clean'] = tweets['text_clean'].apply(lambda tweet: ' '.join(tweet))
 tweets['vader_sentiment'] = tweets['text_clean'].apply(lambda tweet: senti.polarity_scores(tweet)['compound'])
 
 # Impliment SentiStrength (better for short texts) 
@@ -209,24 +208,37 @@ tweets[['blob_sentiment', 'vader_sentiment']].corr(method='spearman') # 0.50
 # Append state onto dataframe
 
 df = pd.read_table('/Users/Daniel/Desktop/final_frame_full.txt', header=0)
-del df['Unnamed: 0'], df['handles'], df['sentiment'], df['country'], df['language'], df['county']
+
+#%%
 
 tweets['state'] = df['state']
+tweets['county'] = df['county']
+tweets['vader_sentiment2'] = df['sentiment']
+tweets['language'] = df['language']
+tweets['country'] = df['country']
 
-del df
+#%%
+#del df['Unnamed: 0'], df['handles'], df['sentiment'], df['country'], df['language'], df['county']
+
+#tweets['state'] = df['state']
+
+#del df
 
 #%%
 
 # Make subset with selected states for topic modelling
 
 NY = tweets[tweets.state == 'NY'] # New York: Its a solely democratic state that went for Hillary Clinton with a big margin
-TN = tweets[tweets.state == 'TN'] # Same as New York, but the other way around... 
+TN = tweets[tweets.state == 'TN'] 
+# Same as New York, but the other way around... 
+
+
+#%%
+del NY['vader_sentiment'], NY['time'], NY['state'], NY['country'], NY['vader_sentiment2'], NY['language'], NY['county'] 
+del TN['vader_sentiment'], TN['time'], TN['state'], TN['country'], TN['vader_sentiment2'], TN['language'], TN['county'] 
 
 NY = pd.DataFrame(NY)
 TN = pd.DataFrame(TN)
-
-del AZ['link'], AZ['vader_sentiment'], AZ['blob_sentiment']
-del TN['link'], TN['vader_sentiment'], TN['blob_sentiment']
 
 #%%
 
@@ -255,6 +267,8 @@ TN['text_clean'] = [clean(doc).split() for doc in TN['text']]
 #%%
 
 
+# If you cut this session the datasets are saved in Fundamentals of data-science
+
 # Find model fit for corpus
 
 from gensim import corpora, models
@@ -263,29 +277,68 @@ texts_for_lda = NY['text_clean'] # Taking stopped part of corpus for LDA modelli
 
 texts = texts_for_lda
 id2word = corpora.Dictionary(texts)
-id2word.filter_extremes(no_below=10, no_above=0.2) # Remove words ocurring in less than 5 and more than 50% of docs
+id2word.filter_extremes(no_below=5, no_above=0.5) # Remove words ocurring in less than 5 and more than 50% of docs
 
 mm = [id2word.doc2bow(text) for text in texts]
 tfidf = models.TfidfModel(mm) # Term frequency-inverse document frequency
-lda_NY = models.ldamodel.LdaModel(corpus = tfidf[mm], id2word = id2word, num_topics = 10, alpha = "auto")
+lda_NY = models.ldamodel.LdaModel(corpus = tfidf[mm], id2word = id2word, num_topics = 2, alpha = "auto")
 
 lda_NY.print_topics(num_words=10)[:5] # Check if it worked
-
-from gensim import corpora, models
 
 texts_for_lda = TN['text_clean'] # Taking stopped part of corpus for LDA modelling
 
 texts = texts_for_lda
 id2word = corpora.Dictionary(texts)
-id2word.filter_extremes(no_below=10, no_above=0.2) # Remove words ocurring in less than 5 and more than 50% of docs
+id2word.filter_extremes(no_below=5, no_above=0.5) # Remove words ocurring in less than 5 and more than 50% of docs
 
 mm = [id2word.doc2bow(text) for text in texts]
 tfidf = models.TfidfModel(mm) # Term frequency-inverse document frequency
-lda_TN = models.ldamodel.LdaModel(corpus = tfidf[mm], id2word = id2word, num_topics = 10, alpha = "auto")
+lda_TN = models.ldamodel.LdaModel(corpus = tfidf[mm], id2word = id2word, num_topics = 5, alpha = "auto")
 
 lda_TN.print_topics(num_words=10)[:5] # Check if it worked
 
 
+#%%
+
+# get term relevance
+
+corpora_dict = corpora.Dictionary(NY['text_clean'])
+corpus = [corpora_dict.doc2bow(t) for t in NY['text_clean']]
+
+viz = pyLDAvis.prepare(lda_NY, corpus, dictionary, sort_topics=False)
+
+name_dict = {   0: "1", # 1 on the chart
+                1: "1",    # 2 on the chart
+                2: "2",  # 3 on the chart
+                3: "3",
+                4: "4",
+                5: "5"
+            }
+
+for_viz = {}
+
+# specify parameter
+lambda_ = 0.4
+
+viz_data = viz.topic_info
+viz_data['relevance'] = lambda_ * viz_data['logprob'] + (1 - lambda_) * viz_data['loglift']
+
+# plot the terms
+plt.rcParams['figure.figsize'] = [20, 11]
+fig, ax_ = plt.subplots(nrows=1, ncols=3)
+ax = ax_.flatten()
+
+for j in range(lda_NY.num_topics):
+    df = viz.topic_info[viz.topic_info.Category=='Topic'+str(j+1)].sort_values(by='relevance', ascending=False).head(30)
+
+    df.set_index(df['Term'], inplace=True)
+    sns.barplot(y="Term", x="Freq",  data=df, ax = ax[j])
+    sns.set_style({"axes.grid": False})
+
+    ax[j].set_xlim([df['Freq'].min()-1, df['Freq'].max()+1])
+    ax[j].set_ylabel('')
+    ax[j].set_title(name_dict[j], size=15)
+    ax[j].tick_params(axis='y', labelsize=13)
 
 #%%
 dictionary = corpora.Dictionary(doc_clean)
