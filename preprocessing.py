@@ -148,11 +148,15 @@ lemma = WordNetLemmatizer()
 
 # In this function we perform the entire cleaning
 def clean(doc):
-    stop_free = " ".join([i for i in doc.lower().split() if i not in stop])
-    punc_free = ''.join(ch for ch in stop_free if ch not in exclude)
-    #normalized = " ".join(lemma.lemmatize(word) for word in punc_free.split())
-    normalized = " ".join(word for word in punc_free.split())
-    return normalized
+    if doc is not None:
+        stop_free = " ".join([i for i in doc.lower().split() if i not in stop])
+        punc_free = ''.join(ch for ch in stop_free if ch not in exclude)
+        #normalized = " ".join(lemma.lemmatize(word) for word in punc_free.split())
+        normalized = " ".join(word for word in punc_free.split())
+        return normalized
+    else:
+        doc = ""
+        return doc
 
 #%%
 # This is the clean corpus.
