@@ -243,11 +243,15 @@ TN = pd.DataFrame(TN)
 #%%
 
 def clean(doc):
-    stop_free = " ".join([i for i in doc.lower().split() if i not in stop])
-    punc_free = ''.join(ch for ch in stop_free if ch not in exclude)
+    if doc is not None:
+        stop_free = " ".join([i for i in doc.lower().split() if i not in stop])
+        punc_free = ''.join(ch for ch in stop_free if ch not in exclude)
     #normalized = " ".join(lemma.lemmatize(word) for word in punc_free.split())
-    normalized = " ".join(word for word in punc_free.split())
-    return normalized
+        normalized = " ".join(word for word in punc_free.split())
+        return normalized
+    else:
+        doc = ""
+        return doc
 
 from nltk.corpus import stopwords
 from nltk.stem.wordnet import WordNetLemmatizer
