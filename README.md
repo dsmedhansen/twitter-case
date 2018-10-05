@@ -37,5 +37,7 @@ The overall goal of this assignment will be to show differences in a selected gr
 
 For the ones new to Github (like me) this short video was pretty helpful in explaining how it works: https://www.youtube.com/watch?v=0fKg7e37bQE
 
-
+Lessons learnt:
+  - Reduce date before doing calculations
+  - Make sure you know the ins and outs of your sentiment library (vader takes capitals into account and we used w.lower() and removed special characters)
 
