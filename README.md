@@ -1,5 +1,10 @@
 # twitter-case
 
+Last sprint to-do's:
+- Correlation between trump vote and trump sentiment at the county level
+- build and illustrate topic model
+
+
 This is the github repo for our first case study.
 
 The overall goal of this assignment will be to show differences in a selected group of battleground states and districts within those states
