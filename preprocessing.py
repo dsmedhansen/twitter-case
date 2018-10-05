@@ -271,6 +271,9 @@ TN['text_clean'] = [clean(doc).split() for doc in TN['text']]
 
 # Find model fit for corpus
 
+# Find way of running topic-model with bigrams?
+# Hot vectors?
+
 from gensim import corpora, models
 
 texts_for_lda = NY['text_clean'] # Taking stopped part of corpus for LDA modelling
