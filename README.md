@@ -11,3 +11,4 @@ For the ones new to Github (like me) this short video was pretty helpful in expl
 Lessons learnt:
   - Reduce date before doing calculations
   - Make sure you know the ins and outs of your sentiment library (vader takes capitals into account and we used w.lower() and removed special characters)
+  - More focus on replicability (streamlining of workflow and methods)
