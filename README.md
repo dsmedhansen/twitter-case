@@ -12,3 +12,6 @@ Lessons learnt:
   - Reduce date before doing calculations
   - Make sure you know the ins and outs of your sentiment library (vader takes capitals into account and we used w.lower() and removed special characters)
   - More focus on replicability (streamlining of workflow and methods)
+  
+  Note to self for next case:
+  - See if we can reduce the scale of PERMA
