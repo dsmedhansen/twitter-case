@@ -12,6 +12,7 @@ Lessons learnt:
   - Reduce date before doing calculations
   - Make sure you know the ins and outs of your sentiment library (vader takes capitals into account and we used w.lower() and removed special characters)
   - More focus on replicability (streamlining of workflow and methods)
+  - A better approach for the topic model might be to take observations that are above/below 2 S.D. in sentiment related to the candidate and model their tweets... 
   
   Note to self for next case:
   - See if we can reduce the scale of PERMA
