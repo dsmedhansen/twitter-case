@@ -153,10 +153,10 @@ def clean(doc):
         punc_free = ''.join(ch for ch in stop_free if ch not in exclude)
         #normalized = " ".join(lemma.lemmatize(word) for word in punc_free.split())
         normalized = " ".join(word for word in punc_free.split())
-        return normalized
+        #return normalized
     else:
         doc = ""
-        return doc
+        #return doc
 
 #%%
 # This is the clean corpus.
