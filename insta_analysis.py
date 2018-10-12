@@ -83,11 +83,14 @@ sample = im_anp_obj_face_frame.sample(n=15)
     # Use one-hot encoder to generate features from filters
     # Do the same with face-smile
     # Maybe use time of posting as variable as well... Use regex to remove date
+    # Drop NaN's from survey_df
+    # Merge with survey and run first regression to see which variables are correlated
+    
     
 #df['hID'].nunique()
 print(survey_df['insta_user_id'].nunique(), "unique respondents in the survey data")
 
-combined = pd.merge(survey_df, im_anp_obj_frame, how='inner', on='image_id')
+combined = pd.merge(survey_df, im_anp_obj_face_frame, how='inner', on='image_id')
 
 #%%
 
@@ -101,18 +104,6 @@ plot.subplots(figsize=(20,15))
 
 figure = plot.get_figure()    
 
-#%%
-
-# Spearman rank correlation 
-
-from scipy.stats import spearmanr, pearsonr
-
-# SERIES OF TUPLES (<scipy.stats.stats.SpearmanrResult> class)
-spr_all_result = a.apply(lambda col: spearmanr(col, b.ix[:,0]), axis=0)
-
-# SERIES OF FLOATS
-spr_corr = a.apply(lambda col: spearmanr(col, b.ix[:,0])[0], axis=0)
-spr_pvalues = a.apply(lambda col: spearmanr(col, b.ix[:,0])[1], axis=0)
 
 #%%
 
