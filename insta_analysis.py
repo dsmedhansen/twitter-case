@@ -42,7 +42,10 @@ im_anp_obj_face_frame = pd.merge(im_anp_obj_frame, face_df, how='inner', on='ima
     # Face emotion
     # Use filter assign values to happiness... 
     # See if PERMA actually is one dimensional (check whether it indeed is a scale, with factor analysis)
-        # Ask Emma how this works... 
+        # Ask Emma how this works...
+    # Use one-hot encoder to generate features from filters
+    
+    
 #df['hID'].nunique()
 print(survey_df['insta_user_id'].nunique(), "unique respondents in the survey data")
 
