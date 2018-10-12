@@ -34,6 +34,7 @@ im_anp_obj_face_frame = pd.merge(im_anp_obj_frame, face_df, how='inner', on='ima
 del anp_df, face_df, image_df, metrics_df, object_labels_df, im_anp_obj_frame, image_anp_frame
 
 im_anp_obj_face_frame =  im_anp_obj_face_frame.drop(
+        
                             ['image_link', 
                             'image_url', 
                             'user_full_name',
@@ -64,9 +65,61 @@ im_anp_obj_face_frame =  im_anp_obj_face_frame.drop(
 
 #df.drop(['B', 'C'], axis=1)
 
-sample = im_anp_obj_face_frame.sample(n=15)
+#%%
 
+survey_df.rename(columns={'insta_user_id':'user_id'}, inplace = True)
+
+#sample_features = im_anp_obj_face_frame.head(n=20)
+#sample_survey = survey_df.head(n=20)
+
+#im_anp_obj_face_frame['user_id'] = pd.to_numeric(im_anp_obj_face_frame['user_id'])
+#survey_df['user_id'] = pd.to_numeric(survey_df['user_id'])
+
+
+survey_df['user_id'] = survey_df['user_id'].astype(int)
+im_anp_obj_face_frame['user_id'] = im_anp_obj_face_frame['user_id'].astype(int)
+
+
+#weather["Temp"] = weather.Temp.astype(float)
 # Merge and present first regression results in table... 
+
+#sample_features = im_anp_obj_face_frame.head(n=20)
+#sample_survey = survey_df.head(n=20)
+
+#%%
+#df = pd.merge(im_anp_obj_face_frame, survey_df, how='inner', on='user_id')
+#df_sample = df.sample(n=200)
+
+df = pd.merge(im_anp_obj_face_frame, survey_df[['PERMA', 'user_id']], how='inner', on='user_id') # For now we just take the outcome variable 
+
+df =  df.drop(
+                            ['image_id',
+                             'image_posted_time',
+                             'user_id',
+                             ], axis=1)
+
+del im_anp_obj_face_frame
+
+df_sample = df.sample(n=400)
+
+
+#%%
+
+# Enrich data with one-hot vectors aka dummy-variables
+
+df_enriched = pd.get_dummies(df, columns=['image_filter', 'face_smile', 'face_gender', 'face_emo'])
+df_enriched_sample = df_enriched.sample(n=15)
+
+del df
+#df_enriched.to_csv("/Users/Daniel/Desktop/enriched_df.csv")
+
+
+#%% And now for the fun stuff
+        # Release da tensorflow... 
+
+
+
+
 
 #%%
 
@@ -88,9 +141,9 @@ sample = im_anp_obj_face_frame.sample(n=15)
     
     
 #df['hID'].nunique()
-print(survey_df['insta_user_id'].nunique(), "unique respondents in the survey data")
+print(survey_df['user_id'].nunique(), "unique respondents in the survey data")
 
-combined = pd.merge(survey_df, im_anp_obj_face_frame, how='inner', on='image_id')
+#combined = pd.merge(survey_df, im_anp_obj_face_frame, how='inner', on='image_id')
 
 #%%
 
@@ -133,13 +186,6 @@ sns_plot = sns.heatmap(corr, mask=mask, cmap=cmap, vmax=.3, center=0,
     
 sns_plot.savefig("/Users/Daniel/Desktop/rank.png")
 
-#%%
-
-# Enrich data with one-hot vectors
-
-df_enriched = pd.get_dummies(im_anp_obj_face_frame, columns=['image_filter', 'face_smile', 'face_gender', 'face_emo'])
-
-df_enriched_sample = df_enriched.sample(n=15)
 
 
 
