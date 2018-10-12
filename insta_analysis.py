@@ -68,29 +68,21 @@ im_anp_obj_face_frame =  im_anp_obj_face_frame.drop(
 #%%
 
 survey_df.rename(columns={'insta_user_id':'user_id'}, inplace = True)
-
-#sample_features = im_anp_obj_face_frame.head(n=20)
-#sample_survey = survey_df.head(n=20)
-
-#im_anp_obj_face_frame['user_id'] = pd.to_numeric(im_anp_obj_face_frame['user_id'])
-#survey_df['user_id'] = pd.to_numeric(survey_df['user_id'])
-
-
 survey_df['user_id'] = survey_df['user_id'].astype(int)
 im_anp_obj_face_frame['user_id'] = im_anp_obj_face_frame['user_id'].astype(int)
 
+#%%
 
-#weather["Temp"] = weather.Temp.astype(float)
-# Merge and present first regression results in table... 
+df = pd.merge(survey_df[['PERMA', 'user_id']], im_anp_obj_face_frame, how='inner', on='user_id') # For now we just take the outcome variable 
 
-#sample_features = im_anp_obj_face_frame.head(n=20)
-#sample_survey = survey_df.head(n=20)
+df = df.drop_duplicates(subset=None, keep='first', inplace=False)
+#df = df.drop(['index'],
+             #axis=1)
+print(im_anp_obj_face_frame['user_id'].nunique(), "unique respondents in features data")
+print(survey_df['user_id'].nunique(), "unique respondents in survey data")
+print("When merged, we have", df['user_id'].nunique(), "unique respondents in the df, with", df['image_id'].nunique(), "unique images")
 
 #%%
-#df = pd.merge(im_anp_obj_face_frame, survey_df, how='inner', on='user_id')
-#df_sample = df.sample(n=200)
-
-df = pd.merge(im_anp_obj_face_frame, survey_df[['PERMA', 'user_id']], how='inner', on='user_id') # For now we just take the outcome variable 
 
 df =  df.drop(
                             ['image_id',
@@ -100,18 +92,15 @@ df =  df.drop(
 
 del im_anp_obj_face_frame
 
-df_sample = df.sample(n=400)
-
 
 #%%
 
 # Enrich data with one-hot vectors aka dummy-variables
 
 df_enriched = pd.get_dummies(df, columns=['image_filter', 'face_smile', 'face_gender', 'face_emo'])
-df_enriched_sample = df_enriched.sample(n=15)
-
-del df
-#df_enriched.to_csv("/Users/Daniel/Desktop/enriched_df.csv")
+sample = df_enriched.sample(frac=0.01, replace=False) # 1% sample becasue my laptop sucks
+sample['PERMA'].nunique() # Same abount of unique PERMA-scores as in whole dataset
+#sample.to_csv("/Users/Daniel/Desktop/enriched_df.csv", sep=";" , index=False)
 
 
 #%% And now for the fun stuff
