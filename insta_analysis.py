@@ -31,6 +31,43 @@ im_anp_obj_frame = pd.merge(image_anp_frame, object_labels_df, how='inner', on='
 im_anp_obj_face_frame = pd.merge(im_anp_obj_frame, face_df, how='inner', on='image_id')
 im_anp_obj_face_frame = pd.merge(im_anp_obj_frame, face_df, how='inner', on='image_id')
 
+del anp_df, face_df, image_df, metrics_df, object_labels_df, im_anp_obj_frame, image_anp_frame
+
+im_anp_obj_face_frame =  im_anp_obj_face_frame.drop(
+                            ['image_link', 
+                            'image_url', 
+                            'user_full_name',
+                            'user_name',
+                            'user_website',
+                            'user_profile_pic',
+                            'user_bio',
+                            'face_mustache',
+                            'face_beard',
+                            'face_beard_confidence',
+                            'face_sunglasses',
+                            'face_mustache_confidence',
+                            'image_posted_time_unix',
+                            'image_height',
+                            'image_width',
+                            'anp_label',
+                            'data_amz_label',
+                            'data_amz_label_confidence',
+                            'emotion_label',
+                            'eyeglasses',
+                            'eyeglasses_confidence',
+                            'face_gender_confidence',
+                            'face_smile_confidence',
+                            'face_id',
+                            'emo_confidence',
+                            'face_age_range_low',
+                            'face_age_range_high'], axis=1)
+
+#df.drop(['B', 'C'], axis=1)
+
+sample = im_anp_obj_face_frame.sample(n=15)
+
+# Merge and present first regression results in table... 
+
 #%%
 
 # Merge on respondent ID?
@@ -44,13 +81,13 @@ im_anp_obj_face_frame = pd.merge(im_anp_obj_frame, face_df, how='inner', on='ima
     # See if PERMA actually is one dimensional (check whether it indeed is a scale, with factor analysis)
         # Ask Emma how this works...
     # Use one-hot encoder to generate features from filters
-    
+    # Do the same with face-smile
+    # Maybe use time of posting as variable as well... Use regex to remove date
     
 #df['hID'].nunique()
 print(survey_df['insta_user_id'].nunique(), "unique respondents in the survey data")
 
 combined = pd.merge(survey_df, im_anp_obj_frame, how='inner', on='image_id')
-
 
 #%%
 
@@ -104,4 +141,19 @@ sns_plot = sns.heatmap(corr, mask=mask, cmap=cmap, vmax=.3, center=0,
     # This makes no sense without the outcome variable...
     
 sns_plot.savefig("/Users/Daniel/Desktop/rank.png")
+
+#%%
+
+# Enrich data with one-hot vectors
+
+df_enriched = pd.get_dummies(im_anp_obj_face_frame, columns=['image_filter', 'face_smile', 'face_gender', 'face_emo'])
+
+df_enriched_sample = df_enriched.sample(n=15)
+
+
+
+
+
+
+
 
