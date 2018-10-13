@@ -107,6 +107,7 @@ df_enriched = pd.read_csv("/Users/Daniel/Desktop/enriched_df.csv", sep=";")
 df_enriched.corr()['PERMA'].sort_values()
 
 # Drop outliers to avoid problems with overfitting
+        # Use the Kalman filter to replace outliers with expected values
 
 #%%
 
