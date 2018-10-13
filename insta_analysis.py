@@ -148,6 +148,8 @@ def format_data(df):
 
 #%%
 
+# Use PCA to find most significant variables and compare with pure correlations
+
 #X_train = X_train.dropna(axis=0).reset_index()
 
 df_enriched = df_enriched.dropna(axis=0)
@@ -307,12 +309,3 @@ sns_plot = sns.heatmap(corr, mask=mask, cmap=cmap, vmax=.3, center=0,
     # This makes no sense without the outcome variable...
     
 sns_plot.savefig("/Users/Daniel/Desktop/rank.png")
-
-
-
-
-
-
-
-
-
