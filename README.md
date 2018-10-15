@@ -2,8 +2,8 @@
 
 Use 2 Case: Business, predicting Well-being from Instagram data
 
-- Impute that one missing variable @Slavo
-- CFA, and possibly construct new scale (refer to other paper) @Slavo
+- Impute that one missing variable @Daniel
+- CFA, and possibly construct new scale (refer to other paper) @Daniel
 - Drop face_emo feature, and drop all duplicates of image_id @Daniel
 - Build variable of when foto was posted (night/day) @Daniel
 - Aggregate to higher level of time-series (week, month, etc.) @Anson
