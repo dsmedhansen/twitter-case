@@ -2,11 +2,19 @@
 
 Use 2 Case: Business, predicting Well-being from Instagram data
 
-- Impute that one missing variable
-- CFA, and possibly construct new scale (refer to other paper)
-- Drop face_emo feature, and drop all duplicates of image_id
-- Build variable of when foto was posted (night/day)
-- Aggregate to higher level of time-series (week, month, etc.)
+- Impute that one missing variable @Slavo
+- CFA, and possibly construct new scale (refer to other paper) @Slavo
+- Drop face_emo feature, and drop all duplicates of image_id @Daniel
+- Build variable of when foto was posted (night/day) @Daniel
+- Aggregate to higher level of time-series (week, month, etc.) @Anson
+ - Look at time-span
+ - Create one-hot vectors of filters, or something smarter
+ - Settle on a good level for aggregation (month, week, or bi-weekely, etc.)
+ - Generate weighted frequencies for each of the hot-vectors
+ Feature selection:
+ - Lasso regression to find the best features @Martijn
+ 
+- Build ML model for data
 - How is frequency of use of a specific filter related to PERMA?
 
 Next, we proceed to feature selection
