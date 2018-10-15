@@ -22,6 +22,11 @@ metrics_df = pd.read_pickle(folder + r'image_metrics.pickle')
 object_labels_df = pd.read_pickle(folder + r'object_labels.pickle') 
 survey_df = pd.read_pickle(folder + r'survey.pickle') 
 
+
+#%%
+
+# Use imputation to deal with the one missing value... 
+
 #%%
 
 # Merge them based on the image_id so that we have a large data frame containing all the elements
