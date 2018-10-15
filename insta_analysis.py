@@ -22,25 +22,93 @@ metrics_df = pd.read_pickle(folder + r'image_metrics.pickle')
 object_labels_df = pd.read_pickle(folder + r'object_labels.pickle') 
 survey_df = pd.read_pickle(folder + r'survey.pickle') 
 
-
 #%%
 
 # Use imputation to deal with the one missing value... 
+
+survey_df['PERMA'].isna().sum() # We have 1 missing value
+survey_df['PERMA'] = survey_df['PERMA'].fillna(survey_df['PERMA'].mean(), inplace=False)
+survey_df['PERMA'].isna().sum()
+
+survey_df = survey_df.drop(['index'], axis = 1)
+
+#%%
+
+from factor_analyzer import FactorAnalyzer
+
+fa = FactorAnalyzer()
+fa_features = survey_df[['P','E','R','M','A']]
+fa.analyze(fa_features, 3, rotation=None) # Oblique rotatio: allows for inter-correlation
+ev, v = fa.get_eigenvalues()
+
+ev # Eigenvalue drops below 
+v
+fa.loadings
+
+#%%
+
+# Factor analysis to check if all five variables load on the same latent construct
+# Construct argument from this: no need to look at the questions when we have FA
+    # The all load on the same latent construct
+    # However, when using the orthogonal rotation...
+
+from factor_analyzer import FactorAnalyzer
+
+fa = FactorAnalyzer()
+fa.analyze(fa_features, 3, rotation='oblimin') # Oblique rotatio: allows for inter-correlation
+ev, v = fa.get_eigenvalues()
+
+ev # Eigenvalue drops below 
+v
+fa.loadings
+
+
+#%%
+
+"""
+In essence, in factor analysis, the factor loadings are a measure of the strength of the interaction 
+between variables in a dataset and each factor. In assessing the significance of factor loadings, 
+this paper will use the rule of thumb suggested by Stevens (1992) that a factor loading of 0.4 four 
+is enough to consider the loadings of the item reliable. To determine the optimal amount of factors for 
+a model DeVellis (2003, p. 114) points out that factors with eigenvalues less than 1 should 
+not be included in the model because an eigenvalue below 1 marks the point at which the items 
+will contain “less information than the average item” (DeVellis, 2003, p. 114). 
+The eigenvalue corresponds to the amount of variance in a model that is accounted for by the factors. 
+In consequence, an eigenvalue of 1 corresponds to 100% of the total variance accounted for by the 
+items in the model. In a Scree plot this corresponds to the “elbow” in the plot (DeVellis, 2003).
+
+"""
 
 #%%
 
 # Merge them based on the image_id so that we have a large data frame containing all the elements
 
-image_anp_frame = pd.merge(image_df, anp_df, how='inner', on='image_id') # This is handy!!
-im_anp_obj_frame = pd.merge(image_anp_frame, object_labels_df, how='inner', on='image_id')
-im_anp_obj_face_frame = pd.merge(im_anp_obj_frame, face_df, how='inner', on='image_id')
-im_anp_obj_face_frame = pd.merge(im_anp_obj_frame, face_df, how='inner', on='image_id')
+image_anp = pd.merge(image_df, anp_df, how='inner', on='image_id') # This is handy!!
+del image_df, anp_df
 
-del anp_df, face_df, image_df, metrics_df, object_labels_df, im_anp_obj_frame, image_anp_frame
+#%%
+image_anp_metrics = pd.merge(image_anp, metrics_df, how='inner', on='image_id')
+del image_anp, metrics_df
 
+#%%
+
+image_anp_metrics_objectlabes = pd.merge(image_anp_metrics, object_labels_df, how='inner', on='image_id')
+del image_anp_metrics, object_labels_df
+
+#%%
+
+image_anp_metrics_objectlabes_face = pd.merge(image_anp_metrics_objectlabes, face_df, how='inner', on='image_id')
+del image_anp_metrics_objectlabes, face_df
+
+#%%
+
+im_anp_obj_face_frame = image_anp_metrics_objectlabes_face
+
+#%%
 im_anp_obj_face_frame =  im_anp_obj_face_frame.drop(
         
-                            ['image_link', 
+                            ['face_emo',
+                            'image_link', 
                             'image_url', 
                             'user_full_name',
                             'user_name',
@@ -66,7 +134,13 @@ im_anp_obj_face_frame =  im_anp_obj_face_frame.drop(
                             'face_id',
                             'emo_confidence',
                             'face_age_range_low',
-                            'face_age_range_high'], axis=1)
+                            'face_age_range_high',
+                            'comment_count_time_created',
+                            'like_count_time_created'], axis=1)
+
+#%%
+
+im_anp_obj_face_frame = im_anp_obj_face_frame.drop_duplicates(subset=None, keep='first', inplace=False)
 
 #%%
 
@@ -88,15 +162,43 @@ print("When merged, we have", df['user_id'].nunique(), "unique respondents in th
 
 # Missing data in the PERMA variable? Replace with imputation...
 
+
 #%%
 
 df =  df.drop(
                             ['image_id',
-                             'image_posted_time',
                              'user_id',
                              ], axis=1)
 
 del im_anp_obj_face_frame
+
+#%% Make day/night variable
+import re
+
+def remove_date(ts): # Remove links from text as first step in cleaning of data
+    for date in ts:
+        result = re.sub(r'[0-9]{2}-[0-9]{2}-[0-9]{4}', '', ts)
+        #print ("\n\nLink free:\n",result)
+        return result
+
+df['time_posted'] = df['time_posted'].apply(lambda time_stamp: remove_date(time_stamp))
+
+#%%
+
+# Note to self: Each image can have more anp's and therefore also several entries per image
+
+# Use this one for day or night validation: https://stackoverflow.com/questions/43299500/pandas-how-to-know-if-its-day-or-night-using-timestamp
+
+import ephem
+import math
+import datetime
+
+def day_or_night(time_stap):
+    sun = ephem.Sun()
+    observer = ephem.Observer()
+
+
+df['posting_at_night']
 
 #%%
 
@@ -132,9 +234,9 @@ from sklearn.model_selection import train_test_split
 
 #%%
 
-
 # Takes in a dataframe, finds the most correlated variables with the
 # grade and returns training and testing datasets
+
 def format_data(df):
     # Targets are perma scores
     labels = df['PERMA']
@@ -143,7 +245,7 @@ def format_data(df):
     most_correlated = df.corr().abs()['PERMA'].sort_values(ascending=False)
     
     # Maintain the top 6 most correlation features with Grade
-    most_correlated = most_correlated[:10]
+    most_correlated = most_correlated[:15]
     
     df = df.loc[:, most_correlated.index]
     
