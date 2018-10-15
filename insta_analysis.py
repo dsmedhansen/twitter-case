@@ -86,6 +86,10 @@ print("When merged, we have", df['user_id'].nunique(), "unique respondents in th
 
 #%%
 
+# Missing data in the PERMA variable? Replace with imputation...
+
+#%%
+
 df =  df.drop(
                             ['image_id',
                              'image_posted_time',
@@ -112,6 +116,7 @@ df_enriched = pd.read_csv("/Users/Daniel/Desktop/enriched_df.csv", sep=";")
 df_enriched.corr()['PERMA'].sort_values()
 
 # Drop outliers to avoid problems with overfitting
+        # Use the Kalman filter to find and replace outliers with expected values
 
 #%%
 
@@ -152,6 +157,8 @@ def format_data(df):
     return X_train, X_test, y_train, y_test
 
 #%%
+
+# Use PCA to find most significant variables and compare with pure correlations
 
 #X_train = X_train.dropna(axis=0).reset_index()
 
@@ -312,12 +319,3 @@ sns_plot = sns.heatmap(corr, mask=mask, cmap=cmap, vmax=.3, center=0,
     # This makes no sense without the outcome variable...
     
 sns_plot.savefig("/Users/Daniel/Desktop/rank.png")
-
-
-
-
-
-
-
-
-
