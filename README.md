@@ -4,6 +4,7 @@ Use 2 Case: Business, predicting Well-being from Instagram data
 
 - Impute that one missing variable
 - CFA, and possibly construct new scale (refer to other paper)
+- Drop face_emo feature, and drop all duplicates of image_id
 - Build variable of when foto was posted (night/day)
 - Aggregate to higher level of time-series (week, month, etc.)
 - How is frequency of use of a specific filter related to PERMA?
