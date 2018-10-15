@@ -81,6 +81,10 @@ print("When merged, we have", df['user_id'].nunique(), "unique respondents in th
 
 #%%
 
+# Missing data in the PERMA variable? Replace with imputation...
+
+#%%
+
 df =  df.drop(
                             ['image_id',
                              'image_posted_time',
