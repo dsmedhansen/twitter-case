@@ -24,11 +24,15 @@ survey_df = pd.read_pickle(folder + r'survey.pickle')
 
 #%%
 
-# Use imputation to deal with the one missing value... 
+# We just reconstruct the scale from the documentation that was provided on Canvas where the PERMA score is made up of a mean for all scores
+print("First we have", survey_df['PERMA'].isna().sum(), "missing values")
+missing_PERMA_score = (survey_df.iloc[4]['A_2': 'E_2'].sum() + survey_df.iloc[4]['H_2': 'P_3'].sum()) / 15
 
-survey_df['PERMA'].isna().sum() # We have 1 missing value
-survey_df['PERMA'] = survey_df['PERMA'].fillna(survey_df['PERMA'].mean(), inplace=False)
-survey_df['PERMA'].isna().sum()
+# survey_df.iloc[4]['PERMA'] # Location of missing value
+
+survey_df.PERMA = survey_df['PERMA'].fillna(missing_PERMA_score)
+
+print("After imputing with the single PERMA-score we have", survey_df['PERMA'].isna().sum(), "missing values")
 
 survey_df = survey_df.drop(['index'], axis = 1)
 
@@ -160,11 +164,6 @@ print("When merged, we have", df['user_id'].nunique(), "unique respondents in th
 
 #%%
 
-# Missing data in the PERMA variable? Replace with imputation...
-
-
-#%%
-
 df =  df.drop(
                             ['image_id',
                              'user_id',
@@ -172,6 +171,14 @@ df =  df.drop(
 
 del im_anp_obj_face_frame
 
+
+#%% Anson you can take over from here...
+    # Find a way to aggregate the remaining variables to a higher level
+    # I think if would make take the mean of the anp_sentiment per image and the same for the emotion score
+    
+    
+    
+    
 #%% Make day/night variable
 import re
 
@@ -212,13 +219,7 @@ df_enriched = pd.get_dummies(df, columns=['image_filter', 'face_smile', 'face_ge
 df_enriched = pd.read_csv("/Users/Daniel/Desktop/enriched_df.csv", sep=";")
 
 #%%
-
-# And now we do the feature selection
-
-df_enriched.corr()['PERMA'].sort_values()
-
-# Drop outliers to avoid problems with overfitting
-        # Use the Kalman filter to find and replace outliers with expected values
+    # Use Lasso filter to find best variables
 
 #%%
 
