@@ -42,7 +42,7 @@ from factor_analyzer import FactorAnalyzer
 
 fa = FactorAnalyzer()
 fa_features = survey_df[['P','E','R','M','A']]
-fa.analyze(fa_features, 3, rotation=None) # Oblique rotatio: allows for inter-correlation
+fa.analyze(fa_features, 3, rotation=None) # No rotation = no correlation among variables
 ev, v = fa.get_eigenvalues()
 
 ev # Eigenvalue drops below 
@@ -56,8 +56,6 @@ fa.loadings
     # The all load on the same latent construct
     # However, when using the orthogonal rotation...
 
-from factor_analyzer import FactorAnalyzer
-
 fa = FactorAnalyzer()
 fa.analyze(fa_features, 3, rotation='oblimin') # Oblique rotatio: allows for inter-correlation
 ev, v = fa.get_eigenvalues()
@@ -70,6 +68,7 @@ fa.loadings
 #%%
 
 """
+From an older paper I wrote on FA: 
 In essence, in factor analysis, the factor loadings are a measure of the strength of the interaction 
 between variables in a dataset and each factor. In assessing the significance of factor loadings, 
 this paper will use the rule of thumb suggested by Stevens (1992) that a factor loading of 0.4 four 
@@ -86,26 +85,26 @@ items in the model. In a Scree plot this corresponds to the “elbow” in the p
 #%%
 
 # Merge them based on the image_id so that we have a large data frame containing all the elements
-
 image_anp = pd.merge(image_df, anp_df, how='inner', on='image_id') # This is handy!!
 del image_df, anp_df
 
 #%%
+# Merge with metricts
 image_anp_metrics = pd.merge(image_anp, metrics_df, how='inner', on='image_id')
 del image_anp, metrics_df
 
 #%%
-
+# Merge with object labels
 image_anp_metrics_objectlabes = pd.merge(image_anp_metrics, object_labels_df, how='inner', on='image_id')
 del image_anp_metrics, object_labels_df
 
 #%%
-
+# Merge wth face labels
 image_anp_metrics_objectlabes_face = pd.merge(image_anp_metrics_objectlabes, face_df, how='inner', on='image_id')
 del image_anp_metrics_objectlabes, face_df
 
 #%%
-
+# Rename df to correspond to old name 
 im_anp_obj_face_frame = image_anp_metrics_objectlabes_face
 
 #%%
@@ -156,7 +155,7 @@ im_anp_obj_face_frame['user_id'] = im_anp_obj_face_frame['user_id'].astype(int)
 
 df = pd.merge(survey_df[['PERMA', 'user_id']], im_anp_obj_face_frame, how='inner', on='user_id') # For now we just take the outcome variable 
 
-df = df.drop_duplicates(subset=None, keep='first', inplace=False)
+df = df.drop_duplicates(subset=None, keep='first', inplace=False) # Drop all duplicates
 
 print(im_anp_obj_face_frame['user_id'].nunique(), "unique respondents in features data")
 print(survey_df['user_id'].nunique(), "unique respondents in survey data")
@@ -173,13 +172,15 @@ del im_anp_obj_face_frame
 
 
 #%% Anson you can take over from here...
+
+# Note to self: Each image can have more anp's and therefore also several entries per image
+
     # Find a way to aggregate the remaining variables to a higher level
     # I think if would make take the mean of the anp_sentiment per image and the same for the emotion score
     
-    
-    
-    
+   
 #%% Make day/night variable
+# I will finish this when I get some more info from Bob Rietveld... 
 import re
 
 def remove_date(ts): # Remove links from text as first step in cleaning of data
@@ -192,7 +193,6 @@ df['time_posted'] = df['time_posted'].apply(lambda time_stamp: remove_date(time_
 
 #%%
 
-# Note to self: Each image can have more anp's and therefore also several entries per image
 
 # Use this one for day or night validation: https://stackoverflow.com/questions/43299500/pandas-how-to-know-if-its-day-or-night-using-timestamp
 
