@@ -219,7 +219,7 @@ df_enriched = pd.get_dummies(df, columns=['image_filter', 'face_smile', 'face_ge
 df_enriched = pd.read_csv("/Users/Daniel/Desktop/enriched_df.csv", sep=";")
 
 #%%
-    # Use Lasso filter to find best variables
+    # @Martijn: Use Lasso filter to find best variables
 
 #%%
 
