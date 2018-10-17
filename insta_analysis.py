@@ -42,7 +42,7 @@ from factor_analyzer import FactorAnalyzer
 
 fa = FactorAnalyzer()
 fa_features = survey_df[['P','E','R','M','A']]
-fa.analyze(fa_features, 3, rotation=None) # No rotation = no correlation among variables
+fa.analyze(fa_features, 3, rotation=None) # No rotation = no correlation between factors
 ev, v = fa.get_eigenvalues()
 
 ev # Eigenvalue drops below 
