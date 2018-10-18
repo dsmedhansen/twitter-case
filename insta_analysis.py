@@ -9,7 +9,8 @@ import pandas as pd
 import seaborn as sns
 import numpy as np
 import matplotlib.pyplot as plt
-
+import datetime
+import time
 #%%
 
 #Read the individual data frames
@@ -168,8 +169,16 @@ df =  df.drop(
                              'user_id',
                              ], axis=1)
 
-del im_anp_obj_face_frame
+del im_anp_obj_face_frame, image_anp_metrics_objectlabes_face
 
+
+#%% Make time of day variable
+
+# Use this one for day or night validation: https://stackoverflow.com/questions/43299500/pandas-how-to-know-if-its-day-or-night-using-timestamp
+
+df['image_posted_time'] = pd.to_datetime(df['image_posted_time'])
+df['time_of_day'] = df['image_posted_time'].dt.time
+time_category = pd.Series(["Morning","Afternoon","Evening","Night"], dtype="category")
 
 #%% Anson you can take over from here...
 
@@ -178,34 +187,12 @@ del im_anp_obj_face_frame
     # Find a way to aggregate the remaining variables to a higher level
     # I think if would make take the mean of the anp_sentiment per image and the same for the emotion score
     
-   
-#%% Make day/night variable
-# I will finish this when I get some more info from Bob Rietveld... 
-import re
 
-def remove_date(ts): # Remove links from text as first step in cleaning of data
-    for date in ts:
-        result = re.sub(r'[0-9]{2}-[0-9]{2}-[0-9]{4}', '', ts)
-        #print ("\n\nLink free:\n",result)
-        return result
-
-df['time_posted'] = df['time_posted'].apply(lambda time_stamp: remove_date(time_stamp))
 
 #%%
+    
 
 
-# Use this one for day or night validation: https://stackoverflow.com/questions/43299500/pandas-how-to-know-if-its-day-or-night-using-timestamp
-
-import ephem
-import math
-import datetime
-
-def day_or_night(time_stap):
-    sun = ephem.Sun()
-    observer = ephem.Observer()
-
-
-df['posting_at_night']
 
 #%%
 
@@ -236,7 +223,7 @@ from sklearn.model_selection import train_test_split
 #%%
 
 # Takes in a dataframe, finds the most correlated variables with the
-# grade and returns training and testing datasets
+# PERMA and returns training and testing datasets
 
 def format_data(df):
     # Targets are perma scores
@@ -245,7 +232,7 @@ def format_data(df):
     # Find correlations with PERMA
     most_correlated = df.corr().abs()['PERMA'].sort_values(ascending=False)
     
-    # Maintain the top 6 most correlation features with Grade
+    # Maintain the top 6 most correlation features with PERMA
     most_correlated = most_correlated[:15]
     
     df = df.loc[:, most_correlated.index]
