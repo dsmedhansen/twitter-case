@@ -186,7 +186,6 @@ import re
 def remove_date(ts): # Remove links from text as first step in cleaning of data
     for date in ts:
         result = re.sub(r'[0-9]{2}-[0-9]{2}-[0-9]{4}', '', ts)
-        #print ("\n\nLink free:\n",result)
         return result
 #df['time_posted'] = df['time_posted'].apply(lambda time_stamp: remove_date(time_stamp))
 
