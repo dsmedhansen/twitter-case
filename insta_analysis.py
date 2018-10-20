@@ -196,7 +196,6 @@ df2 = df2.drop_duplicates(subset=None, keep='first', inplace=False)
 df2 = pd.merge(df2,score,how='inner',on='image_id')
 df2 = df2.drop(['image_id','user_id'],axis=1)
 
-
 #%%
 
 # Enrich data with one-hot vectors aka dummy-variables
