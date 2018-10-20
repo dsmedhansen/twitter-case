@@ -137,7 +137,6 @@ im_anp_obj_face_frame =  im_anp_obj_face_frame.drop(
                             'eyeglasses_confidence',
                             'face_gender_confidence',
                             'face_smile_confidence',
-                            'face_id',
                             'emo_confidence',
                             'face_age_range_low',
                             'face_age_range_high',
@@ -189,21 +188,20 @@ score = df[['image_id','anp_sentiment','emotion_score']]
 score = score.groupby('image_id').mean()
 score['image_id'] = score.index
 
-# frequency: gender and emotion
-gender_df = pd.crosstab(df.image_id,df.face_gender).rename_axis(None,axis=1)
-gender_df['image_id'] = gender_df.index
-emo_df = pd.crosstab(df.image_id,df.face_emo).rename_axis(None,axis=1)
-emo_df['image_id'] = emo_df.index
+# frequency: gender
+gender_count=df.groupby(['image_id','face_gender']).size().reset_index(name='Freq')
+gender_count=gender_count[['image_id','face_gender']]
+gender_count=pd.crosstab(gender_count.image_id,gender_count.face_gender).rename_axis(None,axis=1)
+gender_count['image_id'] = gender_count.index
 
 photo_df = df[:]
 photo_df = photo_df.drop(['anp_sentiment','emotion_score','face_gender','face_smile','face_emo'],axis=1)
 photo_df = photo_df.drop_duplicates(subset=None, keep='first', inplace=False)
 
 photo_df = pd.merge(photo_df,score,how='inner',on='image_id')
-photo_df = pd.merge(photo_df,gender_df,how='inner',on='image_id')
-photo_df = pd.merge(photo_df,emo_df,how='inner',on='image_id')
+photo_df = pd.merge(photo_df,gender_count,how='inner',on='image_id')
 photo_df = photo_df.drop(['image_id','user_id'],axis=1)
-del gender_df, emo_df
+del gender_count
 
 
 #%%
