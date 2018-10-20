@@ -110,8 +110,7 @@ im_anp_obj_face_frame = image_anp_metrics_objectlabes_face
 #%%
 im_anp_obj_face_frame =  im_anp_obj_face_frame.drop(
         
-                            ['face_emo',
-                            'image_link', 
+                            ['image_link', 
                             'image_url', 
                             'user_full_name',
                             'user_name',
