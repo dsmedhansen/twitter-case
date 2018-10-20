@@ -26,16 +26,19 @@ survey_df = pd.read_pickle(folder + r'survey.pickle')
 #%%
 
 # We just reconstruct the scale from the documentation that was provided on Canvas where the PERMA score is made up of a mean for all scores
-print("First we have", survey_df['PERMA'].isna().sum(), "missing values")
-missing_PERMA_score = (survey_df.iloc[4]['A_2': 'E_2'].sum() + survey_df.iloc[4]['H_2': 'P_3'].sum()) / 15
+print("First we have", survey_df['PERMA'].isnull().sum(), "missing values")
+missing_PERMA_score = (survey_df.iloc[4][survey_df.columns[pd.Series(survey_df.columns).str.startswith(('E_','R_','M_','A_'))]].sum()+survey_df.iloc[4]['P_1']+survey_df.iloc[4]['P_2']+survey_df.iloc[4]['P_3'])/15
 
 # survey_df.iloc[4]['PERMA'] # Location of missing value
 
 survey_df.PERMA = survey_df['PERMA'].fillna(missing_PERMA_score)
 
-print("After imputing with the single PERMA-score we have", survey_df['PERMA'].isna().sum(), "missing values")
+print("After imputing with the single PERMA-score we have", survey_df['PERMA'].isnull().sum(), "missing values")
 
 survey_df = survey_df.drop(['index'], axis = 1)
+
+# remove duplicated user_id
+survey_df = survey_df[~survey_df['insta_user_id'].duplicated(keep='first')]
 
 #%%
 
@@ -154,7 +157,7 @@ im_anp_obj_face_frame['user_id'] = im_anp_obj_face_frame['user_id'].astype(int)
 
 #%%
 
-df = pd.merge(survey_df[['PERMA', 'user_id']], im_anp_obj_face_frame, how='inner', on='user_id') # For now we just take the outcome variable 
+df = pd.merge(survey_df[['P','E','R','M','A','PERMA', 'user_id']], im_anp_obj_face_frame, how='inner', on='user_id') # For now we just take the outcome variable 
 
 df = df.drop_duplicates(subset=None, keep='first', inplace=False) # Drop all duplicates
 
@@ -164,10 +167,10 @@ print("When merged, we have", df['user_id'].nunique(), "unique respondents in th
 
 #%%
 
-df =  df.drop(
-                            ['image_id',
-                             'user_id',
-                             ], axis=1)
+#df =  df.drop(
+#                            ['image_id',
+#                             'user_id',
+#                             ], axis=1)
 
 del im_anp_obj_face_frame, image_anp_metrics_objectlabes_face
 
@@ -180,18 +183,18 @@ df['image_posted_time'] = pd.to_datetime(df['image_posted_time'])
 df['time_of_day'] = df['image_posted_time'].dt.time
 time_category = pd.Series(["Morning","Afternoon","Evening","Night"], dtype="category")
 
-#%% Anson you can take over from here...
+#%% Aggregation of data - each image an obs
+ 
+score = df[['image_id','anp_sentiment','emotion_score']]
+score = score.groupby('image_id').mean()
+score['image_id'] = score.index
 
-# Note to self: Each image can have more anp's and therefore also several entries per image
+df2 = df[:]
+df2 = df2.drop(['anp_sentiment','emotion_score','face_gender','face_smile'],axis=1)
+df2 = df2.drop_duplicates(subset=None, keep='first', inplace=False)
 
-    # Find a way to aggregate the remaining variables to a higher level
-    # I think if would make take the mean of the anp_sentiment per image and the same for the emotion score
-    
-
-
-#%%
-    
-
+df2 = pd.merge(df2,score,how='inner',on='image_id')
+df2 = df2.drop(['image_id','user_id'],axis=1)
 
 
 #%%
