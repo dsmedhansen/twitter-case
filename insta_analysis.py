@@ -114,8 +114,7 @@ im_anp_obj_face_frame = image_anp_metrics_objectlabes_face
 #%%
 im_anp_obj_face_frame =  im_anp_obj_face_frame.drop(
         
-                            ['face_emo',
-                            'image_link', 
+                            ['image_link', 
                             'image_url', 
                             'user_full_name',
                             'user_name',
@@ -184,17 +183,28 @@ df['time_of_day'] = df['image_posted_time'].dt.time
 time_category = pd.Series(["Morning","Afternoon","Evening","Night"], dtype="category")
 
 #%% Aggregation of data - each image an obs
- 
+
+# averge score for anp sentiment and emotion
 score = df[['image_id','anp_sentiment','emotion_score']]
 score = score.groupby('image_id').mean()
 score['image_id'] = score.index
 
-df2 = df[:]
-df2 = df2.drop(['anp_sentiment','emotion_score','face_gender','face_smile'],axis=1)
-df2 = df2.drop_duplicates(subset=None, keep='first', inplace=False)
+# frequency: gender and emotion
+gender_df = pd.crosstab(df.image_id,df.face_gender).rename_axis(None,axis=1)
+gender_df['image_id'] = gender_df.index
+emo_df = pd.crosstab(df.image_id,df.face_emo).rename_axis(None,axis=1)
+emo_df['image_id'] = emo_df.index
 
-df2 = pd.merge(df2,score,how='inner',on='image_id')
-df2 = df2.drop(['image_id','user_id'],axis=1)
+photo_df = df[:]
+photo_df = photo_df.drop(['anp_sentiment','emotion_score','face_gender','face_smile','face_emo'],axis=1)
+photo_df = photo_df.drop_duplicates(subset=None, keep='first', inplace=False)
+
+photo_df = pd.merge(photo_df,score,how='inner',on='image_id')
+photo_df = pd.merge(photo_df,gender_df,how='inner',on='image_id')
+photo_df = pd.merge(photo_df,emo_df,how='inner',on='image_id')
+photo_df = photo_df.drop(['image_id','user_id'],axis=1)
+del gender_df, emo_df
+
 
 #%%
 
