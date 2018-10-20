@@ -189,19 +189,30 @@ score = score.groupby('image_id').mean()
 score['image_id'] = score.index
 
 # frequency: gender
-gender_count=df.groupby(['image_id','face_gender']).size().reset_index(name='Freq')
+gender_count=df.groupby(['image_id','face_id','face_gender']).size().reset_index(name='Freq')
 gender_count=gender_count[['image_id','face_gender']]
 gender_count=pd.crosstab(gender_count.image_id,gender_count.face_gender).rename_axis(None,axis=1)
 gender_count['image_id'] = gender_count.index
 
+# smile proportion
+smile_count=df.groupby(['image_id','face_id','face_smile']).size().reset_index(name='Freq')
+smile_count=smile_count[['image_id','face_smile']]
+smile_count=pd.crosstab(smile_count.image_id,smile_count.face_smile).rename_axis(None,axis=1)
+smile_count.rename(columns={False:'No',True:'Yes'},inplace=True)
+smile_count['smile_prop']=smile_count['Yes']/(smile_count['Yes']+smile_count['No'])
+smile_count['image_id']=smile_count.index
+smile_count=smile_count[['image_id','smile_prop']]
+
+
 photo_df = df[:]
-photo_df = photo_df.drop(['anp_sentiment','emotion_score','face_gender','face_smile','face_emo'],axis=1)
+photo_df = photo_df.drop(['anp_sentiment','emotion_score','face_id','face_gender','face_smile','face_emo'],axis=1)
 photo_df = photo_df.drop_duplicates(subset=None, keep='first', inplace=False)
 
 photo_df = pd.merge(photo_df,score,how='inner',on='image_id')
 photo_df = pd.merge(photo_df,gender_count,how='inner',on='image_id')
+photo_df = pd.merge(photo_df,smile_count,how='inner',on='image_id')
 photo_df = photo_df.drop(['image_id','user_id'],axis=1)
-del gender_count
+del gender_count, smile_count
 
 
 #%%
