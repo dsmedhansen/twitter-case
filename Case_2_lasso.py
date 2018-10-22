@@ -50,8 +50,16 @@ lasso = Lasso(alpha=0.00001, normalize=True)
 lasso.fit(X,y)
 # Compute and print the coefficients
 lasso_coef = lasso.coef_
-print(lasso_coef)
 
+merged_df = pd.DataFrame({'variables': colnames, 'lasso_coef':lasso_coef})
+print(merged_df)
+#filters that score above 0.4
+#image_filter_Brooklyn    0.577593
+#image_filter_Dogpatch    0.921600
+#image_filter_Gotham    0.834619
+#image_filter_Maven    1.586243
+#image_filter_Poprocket    0.458768
+#image_filter_Vesper    0.459742
 
 # Plot the coefficients
 plt.plot(range(len(colnames)), lasso_coef)
