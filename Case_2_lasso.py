@@ -210,8 +210,6 @@ std = X_train.std(axis=0)
 X_train = (X_train - mean) / std
 X_test = (X_test - mean) / std
 
-
-
 # Calculate Mean average error and Root mean square deviation
 def evaluate_predictions(predictions, true):
     mae = np.mean(abs(predictions - true))
@@ -263,9 +261,7 @@ def evaluate(X_train, X_test, y_train, y_test):
     results.loc['Baseline', :] = [baseline_mae, baseline_rmse]
     
     return results
-
-# Run models
-    
+   
 # Naive baseline is the median
 median_pred = X_train['PERMA'].median()
 median_preds = [median_pred for _ in range(len(X_test))]
@@ -276,7 +272,6 @@ true = X_test['PERMA']
 #true2 = X_test2['PERMA']
 
 # Display the naive baseline metrics
-
 mb_mae, mb_rmse = evaluate_predictions(median_preds, true)
 #mb_mae2, mb_rmse2 = evaluate_predictions(median_preds2, true2)
 
