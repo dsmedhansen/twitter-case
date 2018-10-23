@@ -5,15 +5,23 @@ Created on Sun Oct 21 13:25:15 2018
 
 @author: martijn
 """
-
+#%%
 import pandas as pd
 import numpy as np
 from sklearn.linear_model import (LinearRegression, Ridge, Lasso, RandomizedLasso)
 import matplotlib.pyplot as plt
 from sklearn.model_selection import cross_val_score
 from pandas.tools.plotting import scatter_matrix
+from sklearn.linear_model import ElasticNet
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.ensemble import ExtraTreesRegressor
+from sklearn.ensemble import GradientBoostingRegressor
+from sklearn.model_selection import train_test_split
 
-df = pd.read_csv('/home/martijn/Downloads/use_case_2/photo_df.csv', delimiter=",")
+#%%
+
+#df = pd.read_csv('/home/martijn/Downloads/use_case_2/photo_df.csv', delimiter=",")
+#df = pd.read_csv('/Users/Daniel/twitter-case/photo_df.csv', delimiter=",")
 df = df.drop(['index','image_posted_time'], axis=1)
 df = df.dropna()
 correlation_matrix = df.corr()
@@ -146,3 +154,143 @@ plt.xticks(range(len(colnames)), colnames.values, rotation=60)
 plt.margins(0.02)
 plt.show()
 '''
+
+#%%
+
+def format_data(df):
+    # Targets are perma scores
+    labels = df_enriched['PERMA']
+    
+    df = df_enriched[['PERMA',
+                      'image_filter_Brooklyn',
+                      'image_filter_Dogpatch',
+                      'image_filter_Gotham',
+                      'image_filter_Maven',
+                      'image_filter_Poprocket',
+                      'image_filter_Vesper']]
+    
+    # Split into training/testing sets with 25% split
+    X_train, X_test, y_train, y_test = train_test_split(df, labels, 
+                                                        test_size = 0.25,
+                                                        random_state=42)
+
+    
+    return X_train, X_test, y_train, y_test
+
+def format_all_features(df):
+    # Targets are perma scores
+    labels = df_enriched['PERMA']
+    
+    df = df_enriched.loc[:,'PERMA': 'image_filter_X-Pro II']
+    
+    # Split into training/testing sets with 25% split
+    X_train, X_test, y_train, y_test = train_test_split(df, labels, 
+                                                        test_size = 0.25,
+                                                        random_state=42)
+
+    
+    return X_train, X_test, y_train, y_test
+
+X_train2, X_test2, y_train2, y_test2 = format_all_features(df_enriched)
+X_train, X_test, y_train, y_test = format_data(df_enriched)
+
+# Normalize features
+mean = X_train.mean(axis=0)
+std = X_train.std(axis=0)
+X_train = (X_train - mean) / std
+X_test = (X_test - mean) / std
+
+mean = X_train2.mean(axis=0)
+std = X_train2.std(axis=0)
+X_train2 = (X_train2 - mean) / std
+X_test2 = (X_test2 - mean) / std
+
+mean = X_train.mean(axis=0)
+std = X_train.std(axis=0)
+X_train = (X_train - mean) / std
+X_test = (X_test - mean) / std
+
+
+
+# Calculate Mean average error and Root mean square deviation
+def evaluate_predictions(predictions, true):
+    mae = np.mean(abs(predictions - true))
+    rmse = np.sqrt(np.mean((predictions - true) ** 2))
+    
+    return mae, rmse
+
+# Evaluate several ml models by training on training set and testing on testing set
+def evaluate(X_train, X_test, y_train, y_test):
+    # Names of models
+    
+    model_name_list = ['Linear Regression', 'ElasticNet Regression',
+                      'Random Forest', 'Extra Trees', 'Gradient Boosted',
+                      'Baseline']
+    
+    X_train = X_train.drop(columns='PERMA')
+    X_test = X_test.drop(columns='PERMA')
+    
+    # Instantiate the models
+    model1 = LinearRegression()
+    model2 = ElasticNet(alpha=1.0, l1_ratio=0.5)
+    model3 = RandomForestRegressor(n_estimators=50)
+    model4 = ExtraTreesRegressor(n_estimators=50)
+    model5 = GradientBoostingRegressor(n_estimators=100)
+    
+    # Dataframe for results
+    results = pd.DataFrame(columns=['mae', 'rmse'], index = model_name_list)
+    
+    # Train and predict with each model
+    for i, model in enumerate([model1, model2, model3, model4, model5]):
+
+        model.fit(X_train, y_train)
+        predictions = model.predict(X_test)
+        
+        # Metrics
+        mae = np.mean(abs(predictions - y_test))
+        rmse = np.sqrt(np.mean((predictions - y_test) ** 2))
+        
+        # Insert results into the dataframe
+        model_name = model_name_list[i]
+        results.loc[model_name, :] = [mae, rmse]
+        #print("...")
+    
+    # Median Value Baseline Metrics
+    baseline = np.median(y_train)
+    baseline_mae = np.mean(abs(baseline - y_test))
+    baseline_rmse = np.sqrt(np.mean((baseline - y_test) ** 2))
+    
+    results.loc['Baseline', :] = [baseline_mae, baseline_rmse]
+    
+    return results
+
+# Run models
+    
+# Naive baseline is the median
+median_pred = X_train['PERMA'].median()
+median_preds = [median_pred for _ in range(len(X_test))]
+true = X_test['PERMA']
+
+#median_pred2 = X_train2['PERMA'].median()
+#median_preds2 = [median_pred2 for _ in range(len(X_test2))]
+#true2 = X_test2['PERMA']
+
+# Display the naive baseline metrics
+
+mb_mae, mb_rmse = evaluate_predictions(median_preds, true)
+#mb_mae2, mb_rmse2 = evaluate_predictions(median_preds2, true2)
+
+print('\nMedian Baseline Mean Average Error: {:.4f}'.format(mb_mae))
+print('Median Baseline Root-Mean-Sqare Error: {:.4f}'.format(mb_rmse))
+#print('Median Baseline all features MAE: {:.4f}'.format(mb_mae2))
+#print('Median Baseline all features RMSE: {:.4f}'.format(mb_rmse2))
+
+results_selected_features = evaluate(X_train, X_test, y_train, y_test)
+results_all_features = evaluate(X_train2, X_test2, y_train2, y_test2)
+
+print("\nSelected features:\n", results_selected_features,"\n")
+print("All features:\n", results_all_features,"\n")
+
+
+
+
