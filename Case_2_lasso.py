@@ -21,7 +21,7 @@ from sklearn.model_selection import train_test_split
 #%%
 
 #df = pd.read_csv('/home/martijn/Downloads/use_case_2/photo_df.csv', delimiter=",")
-#df = pd.read_csv('/Users/Daniel/twitter-case/photo_df.csv', delimiter=",")
+df = pd.read_csv('/Users/Daniel/twitter-case/photo_df.csv', delimiter=",")
 df = df.drop(['index','image_posted_time'], axis=1)
 df = df.dropna()
 correlation_matrix = df.corr()
@@ -131,6 +131,7 @@ def display_plot(cv_scores, cv_scores_std):
 
 # Display the plot
 display_plot(ridge_scores, ridge_scores_std)
+
 '''
 y = df_P.P.values
 # Drop PERMA score
@@ -194,6 +195,9 @@ def format_all_features(df):
 X_train2, X_test2, y_train2, y_test2 = format_all_features(df_enriched)
 X_train, X_test, y_train, y_test = format_data(df_enriched)
 
+
+#%%
+
 # Normalize features
 mean = X_train.mean(axis=0)
 std = X_train.std(axis=0)
@@ -205,10 +209,8 @@ std = X_train2.std(axis=0)
 X_train2 = (X_train2 - mean) / std
 X_test2 = (X_test2 - mean) / std
 
-mean = X_train.mean(axis=0)
-std = X_train.std(axis=0)
-X_train = (X_train - mean) / std
-X_test = (X_test - mean) / std
+
+#%%
 
 # Calculate Mean average error and Root mean square deviation
 def evaluate_predictions(predictions, true):
@@ -236,7 +238,9 @@ def evaluate(X_train, X_test, y_train, y_test):
     model5 = GradientBoostingRegressor(n_estimators=100)
     
     # Dataframe for results
-    results = pd.DataFrame(columns=['mae', 'rmse'], index = model_name_list)
+    results = pd.DataFrame(columns=['Mean Average Error',
+                                    'Root-Mean-Squared-Error'],
+                                       index = model_name_list)
     
     # Train and predict with each model
     for i, model in enumerate([model1, model2, model3, model4, model5]):
