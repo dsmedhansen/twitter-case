@@ -9,8 +9,7 @@ import pandas as pd
 import seaborn as sns
 import numpy as np
 import matplotlib.pyplot as plt
-import datetime
-import time
+
 #%%
 
 #Read the individual data frames
@@ -46,7 +45,7 @@ from factor_analyzer import FactorAnalyzer
 
 fa = FactorAnalyzer()
 fa_features = survey_df[['P','E','R','M','A']]
-fa.analyze(fa_features, 3, rotation=None) # No rotation = no correlation between factors
+fa.analyze(fa_features, 2, rotation=None) # No rotation = no correlation between factors
 ev, v = fa.get_eigenvalues()
 
 ev # Eigenvalue drops below 
@@ -61,13 +60,38 @@ fa.loadings
     # However, when using the orthogonal rotation...
 
 fa = FactorAnalyzer()
-fa.analyze(fa_features, 3, rotation='oblimin') # Oblique rotatio: allows for inter-correlation
+fa.analyze(fa_features, 2, rotation='oblimin') # Oblique rotatio: allows for inter-correlation
 ev, v = fa.get_eigenvalues()
 
 ev # Eigenvalue drops below 
 v
 fa.loadings
 
+#%%
+
+#plt.style.use('fivethirtyeight')
+
+eigvals = ev
+num_vars = 5
+num_obs = 161
+
+fig = plt.figure(figsize=(8,5))
+sing_vals = np.arange(num_vars) + 1
+plt.plot(sing_vals, eigvals, 'ro-', linewidth=2)
+plt.title('')
+plt.xlabel('')
+plt.ylabel('Eigenvalue')
+plt.axhline(linestyle="dashed", y=1.0)
+
+#I don't like the default legend so I typically make mine like below, e.g.
+#with smaller fonts and a bit transparent so I do not cover up data, and make
+#it moveable by the viewer in case upper-right is a bad place for it 
+#leg = plt.legend(['Eigen'], loc='best', borderpad=0.3, 
+                 #shadow=False)
+#leg.get_frame().set_alpha(1.5)
+plt.savefig('/Users/Daniel/twitter-case/scree.eps', 
+            transparent=True,
+            format='eps', dpi=1000)
 
 #%%
 
