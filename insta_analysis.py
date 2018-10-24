@@ -111,15 +111,38 @@ items in the model. In a Scree plot this corresponds to the “elbow” in the p
 """
 
 #%%
-
-# Merge them based on the image_id so that we have a large data frame containing all the elements
+# Calculate the correlation coefficient - attributes
 image_anp = pd.merge(image_df, anp_df, how='inner', on='image_id') # This is handy!!
-del image_df, anp_df
+im_anp_obj = pd.merge(image_anp, object_labels_df, how='inner', on='image_id')
+im_anp_obj_face = pd.merge(im_anp_obj, face_df, how='inner', on='image_id')
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Generate correlation matrix
+cor_matrix = im_anp_obj_face.corr()
+
+# Generate a mask for the upper triangle
+mask = np.zeros_like(cor_matrix, dtype=np.bool)
+mask[np.triu_indices_from(mask)] = True
+
+# Set up the matplotlib figure
+fig, ax = plt.subplots(figsize=(20,10))
+
+# Generate a custom diverging colormap
+cmap = sns.diverging_palette(220, 10, as_cmap=True)
+
+# Producing the group
+x=sns.heatmap(cor_matrix,ax=ax,mask=mask, cmap=cmap, vmax=0.6, vmin=-0.5,center=0,
+            xticklabels = False, square=True, linewidths=.7, 
+            cbar_kws={"shrink": .8})
+fig = x.get_figure()
+fig.savefig('/Users/maksaiwing/Desktop/corr_heatmap.png')
 
 #%%
-# Merge with metricts
+# Merge with metrics
 image_anp_metrics = pd.merge(image_anp, metrics_df, how='inner', on='image_id')
-del image_anp, metrics_df
+del image_anp,image_df, anp_df ,metrics_df
 
 #%%
 # Merge with object labels
